@@ -27,28 +27,13 @@ export default function Home() {
         <section id="home">
           <HeroSection />
         </section>
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-          <section
-            id="about"
-            className="col-span-full md:col-span-2 w-full flex flex-col h-full"
-          >
-            <About />
-          </section>
-
-          {/* Social Links Section - Takes Right 50% */}
-          <section className="col-span-full md:col-span-2 w-full flex flex-col h-full">
-            <div className="space-y-6">
-              <h2 className="text-2xl md:text-3xl font-bold flex items-center gap-2">
-                <MessageSquare className="w-6 h-6 text-dark-secondary" />
-                Socials
-              </h2>
-              <div className="bg-dark-card rounded-3xl border border-dark-border p-6 md:p-8">
-                <SocialLinks />
-              </div>
-            </div>
-          </section>
-        </div>
-
+        <section id="about" className="pt-16">
+          <About />
+        </section>
+        {/*Core  Team */}
+        <section id="team" className="pt-16">
+          <TeamSection />
+        </section>
         {/* Main Bento Grid */}
         <section
           id="events"
@@ -85,8 +70,22 @@ export default function Home() {
         </section>
 
         {/* Contact Us Section */}
-        <section id="contact">
-          <ContactUs />
+        <section id="contact" className="pt-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
+            {/* Get in Touch - Left */}
+            <ContactUs />
+            
+            {/* Socials - Right */}
+            <div className="space-y-6 h-full flex flex-col">
+              <h2 className="text-2xl font-bold flex items-center gap-2">
+                <MessageSquare className="w-6 h-6 text-dark-secondary" />
+                Socials
+              </h2>
+              <div className="bg-dark-card rounded-3xl border border-dark-border p-6 md:p-8 flex-1 flex-1">
+                <SocialLinks />
+              </div>
+            </div>
+          </div>
         </section>
       </div>
     </>
