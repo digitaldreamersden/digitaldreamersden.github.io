@@ -81,7 +81,7 @@ export default function Home() {
                 <MessageSquare className="w-6 h-6 text-dark-secondary" />
                 Socials
               </h2>
-              <div className="bg-dark-card rounded-3xl border border-dark-border p-6 md:p-8 flex-1 flex-1">
+              <div className="bg-dark-card rounded-3xl border border-dark-border p-6 flex-1 flex-1">
                 <SocialLinks />
               </div>
             </div>

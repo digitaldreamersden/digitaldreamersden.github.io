@@ -50,15 +50,6 @@ const socialPlatforms = [
 export default function SocialLinks() {
   return (
     <div>
-      <div className="mb-6">
-        <h3 className="font-bold text-2xl mb-2 bg-linear-to-r from-dark-primary to-dark-primary-light bg-clip-text text-transparent">
-          Connect With Us
-        </h3>
-        <p className="text-dark-muted text-sm">
-          Join our community on your favorite platform
-        </p>
-      </div>
-
       {/* Social Links Grid - 3 per row on desktop, 2 per row on mobile */}
       <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
         {socialPlatforms.map((platform, index) => {
