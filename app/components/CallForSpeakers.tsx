@@ -13,7 +13,7 @@ export default function CallForSpeakers() {
 
   return (
     <div
-      className="w-full max-w-[300px] sm:max-w-[400px] md:max-w-[500px] lg:max-w-[600px] aspect-square rounded-bento p-4 sm:p-5 md:p-6 border border-dark-border bg-dark-card flex flex-col relative overflow-hidden group hover:border-dark-primary transition-colors cursor-pointer"
+      className="w-full max-w-full aspect-[5/2] rounded-bento p-4 sm:p-5 md:p-6 border border-dark-border bg-dark-card flex flex-col relative overflow-hidden group hover:border-dark-primary transition-colors cursor-pointer"
       onClick={handleClick}
     >
       {/* External link icon at top right */}

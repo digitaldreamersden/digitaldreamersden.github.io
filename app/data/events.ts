@@ -28,6 +28,16 @@ export interface EventsData {
 const eventsData: EventsData = {
   pastEvents: [
     {
+      id: "workshop-1",
+      date: "2026-01-31",
+      title: "Digital Dreamers Den (D3) X Lyzr",
+      description: "Agentic AI Workshop",
+      status: "completed",
+      link: "https://d3community.in/workshop-1",
+      venue: "Yuniq, Chennai",
+      image: "/events/workshop-1.jpeg"
+    },
+    {
       id: "meetup-5",
       date: "2024-10-20",
       title: "Meetup 5",
@@ -87,7 +97,7 @@ const eventsData: EventsData = {
       status: "upcoming",
       rsvpUrl: "https://luma.com/ja7nn7ao",
       venue: "Yuniq, Chennai",
-      image: "/events/comingsoon.jpeg"
+      image: "/events/comingsoon.png"
     }
   ]
 };
