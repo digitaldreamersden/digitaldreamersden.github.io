@@ -19,7 +19,7 @@ export default function CardSkeleton({
 
   const CardContent = (
     <div
-      className={`rounded-bento p-6 border border-dark-border ${backgroundClass} flex flex-col relative overflow-hidden group hover:border-dark-primary transition-colors w-[176px] h-[176px] md:w-[200px] md:h-[200px]`}
+      className={`rounded-bento p-6 border border-dark-border ${backgroundClass} flex flex-col relative overflow-hidden group hover:border-dark-primary transition-colors w-[160px] h-[160px] md:w-[200px] md:h-[200px]`}
       style={backgroundStyle}
     >
       {/* External link icon at top right */}

@@ -1,77 +1,47 @@
 'use client';
 
-import Image from "next/image"
-import contributors from "@/public/contributors.json"
-import { Github, Linkedin } from "lucide-react"
-import { getAssetPath } from "@/app/utils/paths"
-
-type Contributor = {
-  id: string;
-  name: string;
-  role: string;
-  avatar: string;
-  github?: string;
-  linkedin?: string;
-};
-
-function ContributorCard({ contributor }: { contributor: Contributor }) {
-  const { name, role, avatar, github, linkedin } = contributor;
-
-  return (
-    <div
-      className="
-        group
-        flex h-[260px] flex-col items-center justify-center
-        rounded-xl
-        bg-dark-card
-        border border-dark-border
-        p-6 text-center
-        transition-all duration-200
-        hover:border-dark-primary
-      "
-    >
-      <Image
-        src={getAssetPath(avatar)}
-        alt={name}
-        width={80}
-        height={80}
-        className="h-20 w-20 rounded-full object-cover"
-      />
-
-      <h3 className="mt-4 font-semibold group-hover:text-dark-primary">
-        {name}
-      </h3>
-
-      <p className="text-sm text-dark-muted">{role}</p>
-
-      <div className="mt-4 flex gap-3">
-        {github && (
-          <a href={github} target="_blank" rel="noreferrer">
-            <Github size={16} />
-          </a>
-        )}
-        {linkedin && (
-          <a href={linkedin} target="_blank" rel="noreferrer">
-            <Linkedin size={16} />
-          </a>
-        )}
-      </div>
-    </div>
-  );
-}
+import Image from 'next/image';
+import { UserPlus } from 'lucide-react';
+import CardSkeleton from './shared/CardSkeleton';
+import contributors, { Contributor } from '@/app/data/contributorsData';
+import { getAssetPath } from '@/app/utils/paths';
 
 export default function ContributorsSection() {
   return (
-    <section className="container py-16">
-      <h2 className="mb-8 text-3xl font-bold text-dark-text">
+    <div className="space-y-8">
+      {/* Section heading */}
+      <h2 className="text-3xl font-bold flex items-center gap-2 text-dark-text">
+        <UserPlus className="w-7 h-7 text-dark-secondary" />
         Contributors
       </h2>
 
-      <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-        {contributors.map((c: Contributor) => (
-          <ContributorCard key={c.id} contributor={c} />
+      {/* Cards */}
+      <div className="flex flex-wrap gap-4 md:gap-7">
+        {contributors.map((contributor: Contributor) => (
+          <CardSkeleton key={contributor.id} url={contributor.linkedin}>
+            {/* Card content */}
+            <div className="h-full flex flex-col items-center justify-center text-center group">
+              {/* Avatar */}
+              <div className="relative w-16 sm:w-18 md:w-20 aspect-square mb-4 flex-shrink-0">
+                <Image
+                  src={getAssetPath(contributor.avatar)}
+                  alt={contributor.name}
+                  fill
+                  className="rounded-full object-cover"
+                />
+              </div>
+
+              {/* Name — hover behavior preserved */}
+              <h3 className="font-semibold text-dark-text group-hover:text-dark-primary transition-colors">
+                {contributor.name}
+              </h3>
+
+              {/* Role */}
+              <p className="text-sm text-dark-muted">{contributor.role}</p>
+            </div>
+          </CardSkeleton>
         ))}
       </div>
-    </section>
-  )
+    </div>
+  );
 }

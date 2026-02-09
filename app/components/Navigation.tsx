@@ -7,7 +7,7 @@ import {
   NAVIGATION_ITEMS,
   SCROLL_CONFIG,
   EXTERNAL_LINKS,
-} from '../../constants/navigation';
+} from '../constants/navigation';
 
 export default function Navigation() {
   const [activeSection, setActiveSection] = useState('home');
@@ -78,7 +78,7 @@ export default function Navigation() {
   return (
     <>
       {/* Desktop Navigation - Hidden on mobile */}
-      <nav className="hidden md:flex fixed bottom-6 left-1/2 -translate-x-1/2 z-50 nav-glass text-dark-text px-6 py-3 rounded-full border border-dark-border shadow-[0_0_20px_rgba(0,0,0,0.5)] items-center gap-6">
+      <nav className="hidden md:flex fixed bottom-6 left-1/2 -translate-x-1/2 z-50 nav-glass text-dark-text px-6 py-3 rounded-full border border-dark-nav-border shadow-[0_0_20px_rgba(0,0,0,0.5)] items-center gap-6">
         <a
           href="#"
           onClick={(e) => handleNavClick(e, 'home')}
@@ -112,7 +112,7 @@ export default function Navigation() {
         ))}
         <div className="h-4 w-px divider-dark-bg"></div>
         <a
-          href={EXTERNAL_LINKS.DISCORD}
+          href={EXTERNAL_LINKS.WHATS_APP}
           target="_blank"
           rel="noopener noreferrer"
           className="bg-dark-primary text-white px-4 py-1.5 rounded-full text-xs font-bold hover:bg-indigo-400 transition-colors shadow-[0_0_15px_rgba(99,102,241,0.4)]"
@@ -137,7 +137,7 @@ export default function Navigation() {
           onClick={() => setIsMenuOpen(false)}
         >
           <div
-            className="nav-glass border border-dark-border rounded-3xl shadow-[0_0_40px_rgba(0,0,0,0.8)] absolute bottom-20 left-1/2 -translate-x-1/2 w-auto min-w-[200px] max-w-[90vw] p-4 h-[60vh] flex flex-col overflow-hidden"
+            className="nav-glass border border-dark-border rounded-3xl shadow-[0_0_40px_rgba(0,0,0,0.8)] absolute bottom-20 left-1/2 -translate-x-1/2 w-auto min-w-[200px] max-w-[90vw] p-4 h-[auto] flex flex-col overflow-hidden"
             onClick={(e) => e.stopPropagation()}
           >
             <nav className="flex flex-col gap-3 flex-1 justify-between">
@@ -187,13 +187,13 @@ export default function Navigation() {
 
               {/* Join Button - Fixed at bottom */}
               <a
-                href={EXTERNAL_LINKS.DISCORD}
+                href={EXTERNAL_LINKS.WHATS_APP}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setIsMenuOpen(false)}
                 className="bg-dark-primary text-white px-6 py-3 rounded-full text-sm font-bold hover:bg-indigo-400 transition-colors shadow-[0_0_15px_rgba(99,102,241,0.4)] text-center"
               >
-                Join Discord
+                Join WhatsApp
               </a>
             </nav>
           </div>

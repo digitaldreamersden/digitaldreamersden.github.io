@@ -16,6 +16,7 @@
     --color-card: #0a1628;
     --color-card-hover: #132338;
     --color-border: #1a2d47;
+    --nav-color-border: #5d6a7b;
 
     /* Brand Colors */
     --color-primary: #004aad;
@@ -62,7 +63,8 @@
     --color-bg: #f8fafc;
     --color-card: #ffffff;
     --color-card-hover: #f1f5f9;
-    --color-border: #e2e8f0;
+    --color-border: #b1b7be;
+    --nav-color-border: #b1b7be;
 
     /* Brand Colors */
     --color-primary: #004aad;
@@ -140,6 +142,9 @@
   .border-dark-border {
     border-color: var(--color-border);
   }
+  .border-dark-nav-border {
+    border-color: var(--nav-color-border);
+  }
   .border-dark-primary {
     border-color: var(--color-primary);
   }
@@ -202,16 +207,15 @@ body {
   font-family: var(--font-jakarta), sans-serif;
   background-color: var(--color-bg);
   color: var(--color-text);
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
 /* Grid lines only in dark mode */
 [data-theme='dark'] body {
-  background-image: linear-gradient(
-      to right,
-      var(--color-gradient-from) 1px,
-      transparent 1px
-    ),
+  background-image:
+    linear-gradient(to right, var(--color-gradient-from) 1px, transparent 1px),
     linear-gradient(to bottom, var(--color-gradient-from) 1px, transparent 1px);
   background-size: 40px 40px;
 }

@@ -4,7 +4,7 @@ import HeroSection from './components/HeroSection';
 import About from './components/About';
 import NextEventCard from './components/NextEventCard';
 import PastEventCard from './components/PastEventCard';
-import MissionLogs from './components/MissionLogs';
+// import MissionLogs from './components/MissionLogs';
 import TeamSection from './components/TeamSection';
 import CommunityPartners from './components/CommunityPartners';
 import CallForSpeakers from './components/CallForSpeakers';
@@ -37,10 +37,10 @@ export default function Home() {
         {/* Main Bento Grid */}
         <section
           id="events"
-          className="flex flex-wrap grid-cols-1 md:grid-cols-4 md:grid-rows-3 gap-4 md:gap-6"
+          className="flex flex-wrap grid-cols-1 md:grid-cols-4 md:grid-rows-3 gap-4 md:gap-8 pt-16"
         >
           <NextEventCard />
-          <PastEventCard/>
+          <PastEventCard />
           <div className="flex flex-wrap gap-4 md:gap-6">
             {/* Call for Speakers Section */}
             <CallForSpeakers />
@@ -48,24 +48,22 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Secondary Section: Past Logs & Team */}
-        <section id="team" className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {/* <section id="mission-logs" className="pt-16">
           <MissionLogs />
-          <TeamSection />
-        </section>
+        </section> */}
 
         {/* Community Partners Section */}
-        <section id="partners">
+        <section id="partners" className="pt-16">
           <CommunityPartners />
         </section>
 
         {/* Sponsors Section */}
-        <section id="sponsors">
+        <section id="sponsors" className="pt-16">
           <Sponsors />
         </section>
 
         {/* Contributors Section */}
-        <section id="contributors">
+        <section id="contributors" className="pt-16">
           <ContributorsSection />
         </section>
 

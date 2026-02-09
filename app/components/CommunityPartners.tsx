@@ -8,7 +8,7 @@ export default function CommunityPartners() {
   return (
     <div className="space-y-6">
       {/* Title */}
-      <h2 className="text-2xl font-bold flex items-center gap-2">
+      <h2 className="text-3xl font-bold flex items-center gap-2">
         <Handshake className="w-6 h-6 text-dark-secondary" />
         Community Partners
       </h2>

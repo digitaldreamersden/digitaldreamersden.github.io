@@ -7,7 +7,7 @@ import { getAssetPath } from '@/app/utils/paths';
 export default function Sponsors() {
   return (
     <div className="space-y-6">
-      <h2 className="text-2xl font-bold flex items-center gap-2">
+      <h2 className="text-3xl font-bold flex items-center gap-2">
         <Award className="w-6 h-6 text-dark-secondary" />
         Sponsors
       </h2>

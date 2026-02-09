@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import { MessageSquare } from "lucide-react";
+import { MessageSquare } from 'lucide-react';
 
 export default function ContactUs() {
   return (

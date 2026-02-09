@@ -1,15 +1,15 @@
 {
-  "name": "community-website",
+  "name": "d3communityofficial",
   "description": "A vibrant tech community that brings together AI Full-Stack Developers to build the future.",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://d3communityofficial.github.io/community-website",
+  "homepage": "https://d3communityofficial.github.io",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/d3communityofficial/community-website.git"
+    "url": "git+https://github.com/d3communityofficial/d3communityofficial.github.io.git"
   },
   "bugs": {
-    "url": "https://github.com/d3communityofficial/community-website/issues"
+    "url": "https://github.com/d3communityofficial/d3communityofficial.github.io/issues"
   },
   "author": "Digital Dreamers Den",
   "scripts": {
