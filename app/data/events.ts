@@ -95,7 +95,7 @@ const eventsData: EventsData = {
       title: "Digital Dreamers Den (D3) X Lyzr Workshop #1",
       description: "Agentic AI Workshop",
       status: "upcoming",
-      rsvpUrl: "https://luma.com/ja7nn7ao",
+      rsvpUrl: "https://luma.com/9bi67aqa",
       venue: "Yuniq, Chennai",
       image: "/events/comingsoon.png"
     }
