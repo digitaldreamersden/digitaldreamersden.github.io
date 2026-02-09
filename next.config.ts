@@ -13,6 +13,12 @@ const nextConfig: NextConfig = {
         port: '',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'podu.pics',
+        port: '',
+        pathname: '/**',
+      },
     ],
   },
   // Base path only for GitHub Pages production deployment

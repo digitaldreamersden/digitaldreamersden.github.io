@@ -24,7 +24,7 @@ export default function ContributorsSection() {
               {/* Avatar */}
               <div className="relative w-16 sm:w-18 md:w-20 aspect-square mb-4 flex-shrink-0">
                 <Image
-                  src={getAssetPath(contributor.avatar)}
+                  src={contributor.avatar}
                   alt={contributor.name}
                   fill
                   className="rounded-full object-cover"
