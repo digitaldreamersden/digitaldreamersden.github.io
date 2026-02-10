@@ -27,26 +27,8 @@ export default function Home() {
         <section id="home">
           <HeroSection />
         </section>
-        <section
-          id="about-socials"
-          className="grid grid-cols-1 md:grid-cols-4 gap-6 pt-16"
-        >
-          <div className="col-span-full md:col-span-2 w-full flex flex-col h-full">
-            <About />
-          </div>
-
-          {/* Social Links Section - Takes Right 50% */}
-          <div className="col-span-full md:col-span-2 w-full flex flex-col h-full">
-            <div className="space-y-6">
-              <h2 className="text-3xl font-bold flex items-center gap-2">
-                <MessageSquare className="w-6 h-6 text-dark-secondary" />
-                Socials
-              </h2>
-              <div className="bg-dark-card rounded-3xl border border-dark-border p-6 md:p-8">
-                <SocialLinks />
-              </div>
-            </div>
-          </div>
+        <section id="about" className="pt-16">
+          <About />
         </section>
         {/*Core  Team */}
         <section id="team" className="pt-16">
@@ -87,7 +69,21 @@ export default function Home() {
 
         {/* Contact Us Section */}
         <section id="contact" className="pt-16">
-          <ContactUs />
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
+            {/* Get in Touch - Left */}
+            <ContactUs />
+            
+            {/* Socials - Right */}
+            <div className="space-y-6 h-full flex flex-col">
+              <h2 className="text-2xl font-bold flex items-center gap-2">
+                <MessageSquare className="w-6 h-6 text-dark-secondary" />
+                Socials
+              </h2>
+              <div className="bg-dark-card rounded-3xl border border-dark-border p-6 md:p-8 flex-1 flex-1">
+                <SocialLinks />
+              </div>
+            </div>
+          </div>
         </section>
       </div>
     </>
