@@ -4,14 +4,13 @@ import { ChevronLeft, ChevronRight, ExternalLink } from "lucide-react";
 import Image from "next/image";
 import { useState, useEffect, useMemo, useCallback } from "react";
 import eventsData from "../data/events";
-import { useResponsiveCardsPerView, useCarouselAutoRotate, useCarouselPause } from "../hooks/useCarousel";
+import { useCarouselAutoRotate, useCarouselPause } from "../hooks/useCarousel";
 import type { UpcomingEvent } from "../data/events";
 
 const PLACEHOLDER_IMAGE = "/events/comingsoon.png";
 
 export default function NextEventCard() {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const cardsPerView = useResponsiveCardsPerView();
 
   const upcomingEvents = useMemo(() => {
     return eventsData.upcomingEvents ?? [];
@@ -21,14 +20,14 @@ export default function NextEventCard() {
 
   const maxIndex = useMemo(() => {
     if (!upcomingEvents.length) return 0;
-    return Math.max(0, upcomingEvents.length - cardsPerView);
-  }, [upcomingEvents.length, cardsPerView]);
+    return Math.max(0, upcomingEvents.length - 1);
+  }, [upcomingEvents.length]);
 
   useEffect(() => {
     if (currentIndex > maxIndex) {
       setCurrentIndex(maxIndex);
     }
-  }, [cardsPerView, currentIndex, maxIndex]);
+  }, [currentIndex, maxIndex]);
 
   useCarouselAutoRotate(currentIndex, setCurrentIndex, maxIndex, isPaused, 4000);
 
@@ -58,20 +57,12 @@ export default function NextEventCard() {
   const handleMouseEnter = useCallback(() => pause(), [pause]);
   const handleMouseLeave = useCallback(() => resume(), [resume]);
 
-  const cardWidth = useMemo(() => {
-    if (cardsPerView === 1) return "100%";
-    const margins = cardsPerView - 1;
-    return `calc((100% - ${margins}rem) / ${cardsPerView})`;
-  }, [cardsPerView]);
+  const cardWidth = "100%";
 
-  const transform = useMemo(() => {
-    if (cardsPerView === 1) {
-      return `translateX(-${currentIndex * 100}%)`;
-    }
-    const cardWidthPercent = 100 / cardsPerView;
-    const marginPerCard = 1 / cardsPerView;
-    return `translateX(calc(-${currentIndex * cardWidthPercent}% - ${currentIndex * marginPerCard}rem))`;
-  }, [currentIndex, cardsPerView]);
+  const transform = useMemo(
+    () => `translateX(-${currentIndex * 100}%)`,
+    [currentIndex]
+  );
 
   const dotsArray = useMemo(() => {
     return Array.from({ length: Math.max(0, maxIndex + 1) }, (_, i) => i);
@@ -115,7 +106,7 @@ export default function NextEventCard() {
         <div
           className="relative overflow-hidden mb-6"
           role="group"
-          aria-label={`Carousel showing ${cardsPerView} of ${upcomingEvents.length} upcoming events`}
+          aria-label={`Carousel showing 1 of ${upcomingEvents.length} upcoming events`}
         >
           <div
             className="flex transition-transform duration-300 ease-in-out"
@@ -123,14 +114,12 @@ export default function NextEventCard() {
             aria-live="polite"
             aria-atomic="false"
           >
-            {upcomingEvents.map((event, index) => (
+            {upcomingEvents.map((event) => (
               <UpcomingEventTile
                 key={event.id}
                 event={event}
                 cardWidth={cardWidth}
-                marginRight={
-                  cardsPerView === 1 || index === upcomingEvents.length - 1 ? "0" : "1rem"
-                }
+                marginRight="0"
               />
             ))}
           </div>
@@ -212,13 +201,6 @@ function UpcomingEventTile({
           />
         </div>
       )}
-
-      <div className="absolute bottom-0 left-0 right-0 p-3 sm:p-4 md:p-5 bg-gradient-to-t from-black/70 to-transparent flex flex-col gap-1">
-        <span className="text-white font-semibold text-sm sm:text-base line-clamp-1">{event.title}</span>
-        {event.date && (
-          <span className="text-white/90 text-xs sm:text-sm">{event.date}</span>
-        )}
-      </div>
 
       {hasRsvp && (
         <div className="absolute bottom-3 right-3 sm:bottom-4 sm:right-4 z-10">

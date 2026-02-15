@@ -43,8 +43,7 @@ export default function Home() {
             </h2>
           </div>
           <div className="flex justify-center items-center">
-            <NextEventCard />
-            
+            <NextEventCard /> 
           </div>
 
         </section>
