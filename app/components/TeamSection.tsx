@@ -30,11 +30,11 @@ export default function TeamSection() {
                 />
               </div>
 
-              <h3 className="font-semibold text-dark-text group-hover:text-dark-primary transition-colors">
+              <h3 className="text-[13px] sm:text-sm font-semibold leading-tight text-center">
                 {member.name}
               </h3>
 
-              <p className="text-sm text-dark-muted">{member.role}</p>
+             <p className="text-[11px] sm:text-xs opacity-70 text-center leading-tight mt-[2px]">{member.role}</p>
             </div>
           </CardSkeleton>
         ))}
