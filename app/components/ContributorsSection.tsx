@@ -20,7 +20,7 @@ export default function ContributorsSection() {
         {contributors.map((contributor: Contributor) => (
           <CardSkeleton key={contributor.id} url={contributor.linkedin}>
             {/* Card content */}
-            <div className="h-full flex flex-col items-center justify-center text-center group">
+             <div className="h-full flex flex-col items-center justify-center text-center group">
               {/* Avatar */}
               <div className="relative w-16 sm:w-18 md:w-20 aspect-square mb-4 flex-shrink-0">
                 <Image
@@ -37,7 +37,7 @@ export default function ContributorsSection() {
               </h3>
 
               {/* Role */}
-              <p className="text-sm text-dark-muted">{contributor.role}</p>
+              <p className="text-[11px] sm:text-xs opacity-70 text-center leading-tight mt-[2px]">{contributor.role}</p>
             </div>
           </CardSkeleton>
         ))}
