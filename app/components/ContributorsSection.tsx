@@ -32,7 +32,7 @@ export default function ContributorsSection() {
               </div>
 
               {/* Name — hover behavior preserved */}
-              <h3 className="font-semibold text-dark-text group-hover:text-dark-primary transition-colors">
+             <h3 className="text-[13px] sm:text-sm font-semibold leading-tight text-dark-text group-hover:text-dark-primary transition-colors break-words">
                 {contributor.name}
               </h3>
 
