@@ -57,10 +57,12 @@ export default function NextEventCard() {
   const handleMouseEnter = useCallback(() => pause(), [pause]);
   const handleMouseLeave = useCallback(() => resume(), [resume]);
 
+  const hasMultipleEvents = upcomingEvents.length > 1;
   const cardWidth = "100%";
 
   const transform = useMemo(
-    () => `translateX(-${currentIndex * 100}%)`,
+    () =>
+      `translateX(calc(-${currentIndex} * var(--slide-step, 100%)))`,
     [currentIndex]
   );
 
@@ -109,7 +111,7 @@ export default function NextEventCard() {
           aria-label={`Carousel showing 1 of ${upcomingEvents.length} upcoming events`}
         >
           <div
-            className="flex transition-transform duration-300 ease-in-out"
+            className={`flex transition-transform duration-300 ease-in-out ${hasMultipleEvents ? "gap-0 lg:gap-1 lg:[--slide-step:calc(50%+2px)]" : ""}`}
             style={{ transform }}
             aria-live="polite"
             aria-atomic="false"
@@ -120,6 +122,7 @@ export default function NextEventCard() {
                 event={event}
                 cardWidth={cardWidth}
                 marginRight="0"
+                responsiveMulti={hasMultipleEvents}
               />
             ))}
           </div>
@@ -176,17 +179,19 @@ function UpcomingEventTile({
   event,
   cardWidth,
   marginRight,
+  responsiveMulti = false,
 }: {
   event: UpcomingEvent;
   cardWidth: string;
   marginRight: string;
+  responsiveMulti?: boolean;
 }) {
   const hasRsvp = Boolean(event.rsvpUrl);
 
   return (
     <div
-      className="flex-shrink-0 rounded-bento p-3 sm:p-4 md:p-5 border border-dark-border bg-dark-card flex flex-col relative overflow-hidden group hover:border-dark-primary transition-colors h-[300px] focus-within:ring-2 focus-within:ring-dark-primary focus-within:ring-offset-2"
-      style={{ width: cardWidth, marginRight }}
+      className={`flex-shrink-0 rounded-bento p-3 sm:p-4 md:p-5 border border-dark-border bg-dark-card flex flex-col relative overflow-hidden group hover:border-dark-primary transition-colors h-[300px] focus-within:ring-2 focus-within:ring-dark-primary focus-within:ring-offset-2 ${responsiveMulti ? "w-full lg:w-[calc(50%-2px)]" : ""}`}
+      style={responsiveMulti ? undefined : { width: cardWidth, marginRight }}
       role="article"
       aria-label={`Upcoming event: ${event.title}`}
     >
