@@ -7,11 +7,12 @@ import PastEventCard from './components/PastEventCard';
 // import MissionLogs from './components/MissionLogs';
 import TeamSection from './components/TeamSection';
 import CommunityPartners from './components/CommunityPartners';
-import CallForSpeakers from './components/CallForSpeakers';
-import CallForVolunteers from './components/CallForVolunteers';
+import CallForEventCard from './components/CallForEventCard';
+import { callForEvents } from './data/callForEvents';
 import Sponsors from './components/Sponsors';
 import ContactUs from './components/ContactUs';
 import ContributorsSection from './components/ContributorsSection';
+import { CalendarCheck, CalendarClock, Megaphone } from 'lucide-react';
 import SocialLinks from './components/ContactUs/SocialLinks';
 import { MessageSquare } from 'lucide-react';
 
@@ -34,19 +35,28 @@ export default function Home() {
         <section id="team" className="pt-16">
           <TeamSection />
         </section>
-        {/* Main Bento Grid */}
-        <section
-          id="events"
-          className="flex flex-wrap grid-cols-1 md:grid-cols-4 md:grid-rows-3 gap-4 md:gap-8 pt-16"
-        >
-          <NextEventCard />
-          <PastEventCard />
-          <div className="flex flex-wrap gap-4 md:gap-6">
-            {/* Call for Speakers Section */}
-            <CallForSpeakers />
-            <CallForVolunteers />
+        <section id="events">
+          <div className="flex items-center gap-3 mb-6">
+            <CalendarClock className="w-6 h-6 text-dark-secondary" />
+            <h2 className="text-2xl md:text-3xl font-bold font-sans text-[var(--color-text)]">
+              Upcoming Events
+            </h2>
           </div>
+          <div className="flex justify-center items-center">
+            <NextEventCard /> 
+          </div>
+
         </section>
+        <section>
+        <div className="flex items-center gap-3 mb-6">
+            <CalendarCheck className="w-6 h-6 text-dark-secondary" />
+            <h2 className="text-2xl md:text-3xl font-bold font-sans text-[var(--color-text)]">
+              Past Events
+            </h2>
+          </div>
+          <PastEventCard/>
+        </section>
+
 
         {/* <section id="mission-logs" className="pt-16">
           <MissionLogs />
@@ -66,7 +76,20 @@ export default function Home() {
         <section id="contributors" className="pt-16">
           <ContributorsSection />
         </section>
-
+        {/* Call for events */}
+        <section id="call-for-events" className="pt-16">
+          <div className="flex items-center gap-3 mb-6">
+            <Megaphone className="w-6 h-6 text-dark-secondary" />
+            <h2 className="text-2xl md:text-3xl font-bold font-sans text-[var(--color-text)]">
+              Call for events
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {callForEvents.map((data) => (
+              <CallForEventCard key={data.title} data={data} />
+            ))}
+          </div>
+        </section>
         {/* Contact Us Section */}
         <section id="contact" className="pt-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
