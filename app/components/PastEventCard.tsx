@@ -1,7 +1,8 @@
 "use client";
 
-import { CalendarCheck, ChevronLeft, ChevronRight, MapPin } from "lucide-react";
-import { useState, useEffect, useMemo, useCallback, useRef } from "react";
+import { ChevronLeft, ChevronRight, ExternalLink } from "lucide-react";
+import Image from "next/image";
+import { useState, useEffect, useMemo, useCallback } from "react";
 import eventsData from "../data/events";
 import { useResponsiveCardsPerView, useCarouselAutoRotate, useCarouselPause } from "../hooks/useCarousel";
 
@@ -15,7 +16,6 @@ export default function PastEventCard() {
   }, []);
   
   const { isPaused, pause, resume, pauseWithResume } = useCarouselPause();
-  const carouselRef = useRef<HTMLDivElement>(null);
 
   // Early return check (moved after hooks to follow rules of hooks)
   const maxIndex = useMemo(() => {
@@ -52,7 +52,6 @@ export default function PastEventCard() {
     callback();
   }, [pauseWithResume]);
 
- 
   const handleMouseEnter = useCallback(() => pause(), [pause]);
   const handleMouseLeave = useCallback(() => resume(), [resume]);
 
@@ -67,7 +66,9 @@ export default function PastEventCard() {
     if (cardsPerView === 1) {
       return `translateX(-${currentIndex * 100}%)`;
     }
-    return `translateX(calc(-${currentIndex * (100 / cardsPerView)}% - ${currentIndex}rem))`;
+    const cardWidthPercent = 100 / cardsPerView;
+    const marginPerCard = 1 / cardsPerView; // Each card contributes 1rem / cardsPerView to the total margin
+    return `translateX(calc(-${currentIndex * cardWidthPercent}% - ${currentIndex * marginPerCard}rem))`;
   }, [currentIndex, cardsPerView]);
 
   // Memoize dots array to prevent React children change error
@@ -89,19 +90,9 @@ export default function PastEventCard() {
       aria-label="Past Events Carousel"
     >
       <div className="relative z-10 h-full flex flex-col">
-        <div className="flex justify-between items-start mb-6">
-          <div className="p-3 bg-dark-card border border-dark-border rounded-xl">
-            <CalendarCheck className="w-6 h-6 text-dark-secondary" aria-hidden="true" />
-          </div>
-          <span className="text-sm font-bold uppercase tracking-widest text-dark-muted border border-dark-border px-2 py-1 rounded bg-dark-card">
-            Past Events
-          </span>
-        </div>
-
         {/* Carousel Content - Responsive Cards */}
         <div 
           className="relative overflow-hidden mb-6"
-          ref={carouselRef}
           role="group"
           aria-label={`Carousel showing ${cardsPerView} of ${pastEvents.length} events`}
         >
@@ -117,29 +108,33 @@ export default function PastEventCard() {
                 target="_blank"
                 rel="noopener noreferrer"
                 key={event.id}
-                className="flex-shrink-0 rounded-bento p-6 border border-dark-border bg-dark-card flex flex-col hover:border-dark-primary transition-all focus:outline-none focus:ring-2 focus:ring-dark-primary focus:ring-offset-2"
+                className="flex-shrink-0 rounded-bento p-3 sm:p-4 md:p-5 border border-dark-border bg-dark-card flex flex-col relative overflow-hidden group hover:border-dark-primary transition-colors cursor-pointer aspect-square max-w-[300px] sm:max-w-[400px] md:max-w-[500px] lg:max-w-[600px] focus:outline-none focus:ring-2 focus:ring-dark-primary focus:ring-offset-2"
                 style={{ 
                   width: cardWidth,
                   marginRight: cardsPerView === 1 || index === pastEvents.length - 1 ? '0' : '1rem'
                 }}
-                aria-label={`${event.title} - ${event.formattedDate}`}
+                aria-label={`${event.title}`}
               >
-                <div className="mb-4">
-                  <div className="text-dark-secondary font-mono text-xs mb-2">&gt;&gt; {event.formattedDate}</div>
-                  <h3 className="text-lg font-bold leading-tight mb-2 text-dark-text">{event.title}</h3>
-                  <p className="text-dark-muted text-lg leading-relaxed border-l-2 border-dark-primary pl-3 mb-3">
-                    {event.description}
-                  </p>
-                  {event.venue && (
-                    <div className="flex items-center gap-2 text-sm text-dark-muted">
-                      <MapPin className="w-3 h-3 flex-shrink-0" aria-hidden="true" />
-                      <span>{event.venue}</span>
+                {/* External link icon at top right */}
+                {event.link && (
+                  <div className="absolute top-3 right-3 sm:top-4 sm:right-4 z-10">
+                    <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-gray-500/80 backdrop-blur-sm flex items-center justify-center border border-gray-400/50">
+                      <ExternalLink className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white group-hover:text-gray-100 transition-colors" />
                     </div>
-                  )}
-                </div>
-                <div className="mt-auto">
-                  <div className="text-xs text-dark-muted font-mono">✓ Event Completed</div>
-                </div>
+                  </div>
+                )}
+
+                {/* Image filling the entire card */}
+                {event.image && (
+                  <div className="absolute inset-0 -m-2 sm:-m-4 md:-m-6">
+                    <Image
+                      src={event.image}
+                      alt={`${event.title}`}
+                      fill
+                      className="object-contain p-4 sm:p-5 md:p-6"
+                    />
+                  </div>
+                )}
               </a>
             ))}
           </div>
