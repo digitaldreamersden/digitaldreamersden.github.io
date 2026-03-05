@@ -1,11 +1,13 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 
 /**
- * Breakpoints for responsive carousel
+ * Breakpoints for responsive carousel (1 / 2 / 3 / 4 cards per row)
  */
 const BREAKPOINTS = {
-  mobile: 768,
-  tablet: 1024,
+  mobile: 640,
+  tablet: 768,
+  desktop: 1024,
+  xl: 1280,
 } as const;
 
 /**
@@ -28,26 +30,30 @@ function debounce<T extends (...args: unknown[]) => void>(
 
 /**
  * Hook to handle responsive cards per view based on window size
- * Returns the number of cards to display (1 for mobile, 2 for tablet, 3 for desktop)
- * 
+ * Returns the number of cards to display (1 / 2 / 3 / 4 per row)
+ *
  * @returns {number} Number of cards to display per view
  */
 export function useResponsiveCardsPerView(): number {
   const [cardsPerView, setCardsPerView] = useState<number>(() => {
-    // SSR-safe initial state
-    if (typeof window === 'undefined') return 3;
-    if (window.innerWidth >= BREAKPOINTS.tablet) return 3;
+    if (typeof window === 'undefined') return 4;
+    if (window.innerWidth >= BREAKPOINTS.xl) return 4;
+    if (window.innerWidth >= BREAKPOINTS.desktop) return 3;
+    if (window.innerWidth >= BREAKPOINTS.tablet) return 2;
     if (window.innerWidth >= BREAKPOINTS.mobile) return 2;
     return 1;
   });
 
   useEffect(() => {
-    // SSR check
     if (typeof window === 'undefined') return;
 
     const updateCardsPerView = () => {
-      if (window.innerWidth >= BREAKPOINTS.tablet) {
+      if (window.innerWidth >= BREAKPOINTS.xl) {
+        setCardsPerView(4);
+      } else if (window.innerWidth >= BREAKPOINTS.desktop) {
         setCardsPerView(3);
+      } else if (window.innerWidth >= BREAKPOINTS.tablet) {
+        setCardsPerView(2);
       } else if (window.innerWidth >= BREAKPOINTS.mobile) {
         setCardsPerView(2);
       } else {
@@ -55,16 +61,10 @@ export function useResponsiveCardsPerView(): number {
       }
     };
 
-    // Debounce resize events for better performance
     const debouncedUpdate = debounce(updateCardsPerView, 150);
-    
-    // Initial call
     updateCardsPerView();
-    
     window.addEventListener('resize', debouncedUpdate);
-    return () => {
-      window.removeEventListener('resize', debouncedUpdate);
-    };
+    return () => window.removeEventListener('resize', debouncedUpdate);
   }, []);
 
   return cardsPerView;

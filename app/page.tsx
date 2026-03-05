@@ -1,14 +1,12 @@
 import Navigation from './components/Navigation';
 import Header from './components/Header';
 import HeroSection from './components/HeroSection';
-import About from './components/About';
-import NextEventCard from './components/NextEventCard';
-import PastEventCard from './components/PastEventCard';
-// import MissionLogs from './components/MissionLogs';
+import EventCardCarousel from './components/EventCardCarousel';
 import TeamSection from './components/TeamSection';
 import CommunityPartners from './components/CommunityPartners';
 import CallForEventCard from './components/CallForEventCard';
 import { callForEvents } from './data/callForEvents';
+import eventsData from './data/events';
 import Sponsors from './components/Sponsors';
 import ContactUs from './components/ContactUs';
 import ContributorsSection from './components/ContributorsSection';
@@ -28,9 +26,6 @@ export default function Home() {
         <section id="home">
           <HeroSection />
         </section>
-        <section id="about" className="pt-16">
-          <About />
-        </section>
         {/*Core  Team */}
         <section id="team" className="pt-16">
           <TeamSection />
@@ -42,19 +37,25 @@ export default function Home() {
               Upcoming Events
             </h2>
           </div>
-          <div className="flex justify-center items-center">
-            <NextEventCard /> 
-          </div>
-
+          <EventCardCarousel
+            events={eventsData.upcomingEvents ?? []}
+            variant="upcoming"
+            ariaLabel="Upcoming Events Carousel"
+            emptyMessage="No upcoming events. Stay tuned!"
+          />
         </section>
         <section>
-        <div className="flex items-center gap-3 mb-6">
+          <div className="flex items-center gap-3 mb-6">
             <CalendarCheck className="w-6 h-6 text-dark-secondary" />
             <h2 className="text-2xl md:text-3xl font-bold font-sans text-[var(--color-text)]">
               Past Events
             </h2>
           </div>
-          <PastEventCard/>
+          <EventCardCarousel
+            events={eventsData.pastEvents ?? []}
+            variant="past"
+            ariaLabel="Past Events Carousel"
+          />
         </section>
 
 

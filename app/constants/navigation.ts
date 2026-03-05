@@ -11,7 +11,6 @@
  */
 export const NAVIGATION_SECTIONS = [
   'home',
-  'about-socials',
   'team',
   'events',
   // 'mission-logs',
@@ -33,7 +32,6 @@ export interface NavigationItem {
 
 export const NAVIGATION_ITEMS: NavigationItem[] = [
   { id: 'home', label: 'Home', href: '#' },
-  { id: 'about-socials', label: 'About', href: '#about-socials' },
   { id: 'team', label: 'Team', href: '#team' },
   { id: 'events', label: 'Events', href: '#events' },
   // { id: 'mission-logs', label: 'Mission', href: '#mission-logs' },
