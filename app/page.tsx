@@ -58,11 +58,6 @@ export default function Home() {
           />
         </section>
 
-
-        {/* <section id="mission-logs" className="pt-16">
-          <MissionLogs />
-        </section> */}
-
         {/* Community Partners Section */}
         <section id="partners" className="pt-16">
           <CommunityPartners />
@@ -96,7 +91,7 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
             {/* Get in Touch - Left */}
             <ContactUs />
-            
+
             {/* Socials - Right */}
             <div className="space-y-6 h-full flex flex-col">
               <h2 className="text-2xl font-bold flex items-center gap-2">

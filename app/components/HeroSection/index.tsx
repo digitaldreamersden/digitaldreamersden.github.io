@@ -12,9 +12,6 @@ export default function HeroSection() {
       data-hero-section
       className="md:col-span-2 md:row-span-2 bg-dark-card rounded-bento p-8 md:p-12 border border-dark-border bento-card relative overflow-hidden group flex flex-col justify-between"
     >
-      {/* 3D Robot Model - Commented out for now, will be used in future */}
-      {/* <Robot3D /> */}
-
       {/* Hero Icon - Renders tablet and desktop images based on device type */}
       <HeroIcon variant="desktop" />
 
