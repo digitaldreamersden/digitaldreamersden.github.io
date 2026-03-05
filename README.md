@@ -201,7 +201,7 @@ community-website/
 │   ├── context/             # React Context providers
 │   │   └── ThemeContext.tsx # Theme state management
 │   ├── data/                # Static data files
-│   │   └── aboutData.ts     # About section data
+│   │   └── events.ts     # About section data
 │   ├── utils/               # Utility functions
 │   │   └── paths.ts         # Asset path helpers for GitHub Pages
 │   ├── favicon.ico          # Site favicon
@@ -308,22 +308,18 @@ Divider: #003580 (Navy Blue)
 The theme includes 5 custom gradient variations:
 
 1. **Primary Gradient** (`--gradient-primary`)
-
    - `linear-gradient(135deg, #004aad 0%, #0066ff 100%)`
    - Used in: Buttons, logos, hero CTA
 
 2. **Primary Soft** (`--gradient-primary-soft`)
-
    - Semi-transparent overlay for subtle backgrounds
    - Used in: Cards, stats section
 
 3. **Hero Gradient** (`--gradient-hero`)
-
    - `linear-gradient(135deg, #003580 0%, #004aad 50%, #0066ff 100%)`
    - Used in: Text gradients, hero section
 
 4. **Card Gradient** (`--gradient-card`)
-
    - Subtle gradient for card backgrounds
    - Used in: Event cards
 
@@ -364,14 +360,12 @@ function MyComponent() {
 The website is **fully responsive** and follows a **mobile-first approach** with optimized layouts for all devices:
 
 - **Mobile**: < 768px
-
   - Touch-optimized interface
   - Simplified navigation
   - Stacked card layouts
   - Optimized font sizes and spacing
 
 - **Tablet**: 768px - 1024px
-
   - Balanced grid layouts
   - Enhanced spacing
   - Optimized for both portrait and landscape
