@@ -143,8 +143,8 @@ export default function EventCardCarousel({
   return (
     <div
       className="w-full rounded-bento p-4 sm:p-5 md:p-6 border border-dark-border bg-dark-card flex flex-col relative overflow-hidden group"
-      onMouseEnter={pause}
-      onMouseLeave={resume}
+      onMouseEnter={() => pause()}
+      onMouseLeave={() => resume()}
       role="region"
       aria-label={ariaLabel}
     >
