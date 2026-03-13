@@ -32,9 +32,9 @@ export default function ContributorsSection() {
                 />
               </div>
 <div className="absolute -bottom-4 left-2 right-2
-  opacity-0 translate-y-3
-  group-hover:opacity-100 group-hover:translate-y-0
-  transition-all duration-300">
+                opacity-0 translate-y-3
+                group-hover:opacity-100 group-hover:translate-y-0
+                transition-all duration-300">
 
   <div
     className="px-3 sm:px-4 py-1 sm:py-1.5 text-center shadow-md"
