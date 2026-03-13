@@ -31,11 +31,10 @@ export default function ContributorsSection() {
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
-<div className="absolute -bottom-4 left-1/2 -translate-x-1/2
-                w-[92%] sm:w-[90%] md:w-[80%] max-w-[260px]
-                opacity-0 translate-y-3
-                group-hover:opacity-100 group-hover:translate-y-0
-                transition-all duration-300">
+<div className="absolute -bottom-4 left-2 right-2
+  opacity-0 translate-y-3
+  group-hover:opacity-100 group-hover:translate-y-0
+  transition-all duration-300">
 
   <div
     className="px-3 sm:px-4 py-1 sm:py-1.5 text-center shadow-md"
