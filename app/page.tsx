@@ -80,9 +80,12 @@ export default function Home() {
               Call for events
             </h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {callForEvents.map((data) => (
-              <CallForEventCard key={data.title} data={data} />
+              <CallForEventCard
+                key={encodeURIComponent(data.title)}
+                data={data}
+              />
             ))}
           </div>
         </section>

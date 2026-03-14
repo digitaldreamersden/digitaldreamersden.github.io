@@ -108,7 +108,7 @@ export default function PastEventCard() {
                 target="_blank"
                 rel="noopener noreferrer"
                 key={event.id}
-                className="flex-shrink-0 rounded-bento p-3 sm:p-4 md:p-5 border border-dark-border bg-dark-card flex flex-col relative overflow-hidden group hover:border-dark-primary transition-colors cursor-pointer aspect-square max-w-[300px] sm:max-w-[400px] md:max-w-[500px] lg:max-w-[600px] focus:outline-none focus:ring-2 focus:ring-dark-primary focus:ring-offset-2"
+                className="flex-shrink-0 rounded-bento p-3 sm:p-4 md:p-5 border border-dark-border bg-dark-card flex flex-col relative overflow-hidden group hover:border-dark-primary transition-colors cursor-pointer aspect-[4/3] max-w-[300px] sm:max-w-[400px] md:max-w-[500px] lg:max-w-[600px] focus:outline-none focus:ring-2 focus:ring-dark-primary focus:ring-offset-2"
                 style={{ 
                   width: cardWidth,
                   marginRight: cardsPerView === 1 || index === pastEvents.length - 1 ? '0' : '1rem'
@@ -124,14 +124,14 @@ export default function PastEventCard() {
                   </div>
                 )}
 
-                {/* Image filling the entire card */}
+                {/* Image filling the entire card (454×346 ~ 4:3) */}
                 {event.image && (
-                  <div className="absolute inset-0 -m-2 sm:-m-4 md:-m-6">
+                  <div className="absolute inset-0 -m-2 sm:-m-4 md:-m-6 flex items-center justify-center bg-dark-card">
                     <Image
                       src={event.image}
                       alt={`${event.title}`}
                       fill
-                      className="object-contain p-4 sm:p-5 md:p-6"
+                      className="object-contain"
                     />
                   </div>
                 )}

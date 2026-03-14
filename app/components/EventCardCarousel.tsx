@@ -142,7 +142,7 @@ export default function EventCardCarousel({
 
   return (
     <div
-      className="w-full rounded-bento p-4 sm:p-5 md:p-6 border border-dark-border bg-dark-card flex flex-col relative overflow-hidden group"
+      className="w-full rounded-bento p-2 sm:p-3 md:p-4 border border-dark-border bg-dark-card flex flex-col relative overflow-hidden group"
       onMouseEnter={() => pause()}
       onMouseLeave={() => resume()}
       role="region"
@@ -279,12 +279,12 @@ function EventCard({
         </div>
       )}
 
-      <div className="absolute inset-0 -m-2 sm:-m-3">
+      <div className="absolute inset-0 -m-2 sm:-m-3 flex items-center justify-center bg-dark-card">
         <Image
           src={image}
           alt={event.title}
           fill
-          className="object-cover"
+          className="object-contain"
           sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, (max-width: 1280px) 25vw, 280px"
         />
       </div>
