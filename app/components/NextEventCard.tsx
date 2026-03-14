@@ -190,19 +190,19 @@ function UpcomingEventTile({
 
   return (
     <div
-      className={`flex-shrink-0 rounded-bento p-3 sm:p-4 md:p-5 border border-dark-border bg-dark-card flex flex-col relative overflow-hidden group hover:border-dark-primary transition-colors h-[300px] focus-within:ring-2 focus-within:ring-dark-primary focus-within:ring-offset-2 ${responsiveMulti ? "w-full lg:w-[calc(50%-2px)]" : ""}`}
+      className={`flex-shrink-0 rounded-bento p-3 sm:p-4 md:p-5 border border-dark-border bg-dark-card flex flex-col relative overflow-hidden group hover:border-dark-primary transition-colors aspect-[4/3] focus-within:ring-2 focus-within:ring-dark-primary focus-within:ring-offset-2 ${responsiveMulti ? "w-full lg:w-[calc(50%-2px)]" : ""}`}
       style={responsiveMulti ? undefined : { width: cardWidth, marginRight }}
       role="article"
       aria-label={`Upcoming event: ${event.title}`}
     >
       {event.image && (
-        <div className="absolute inset-0 -m-2 sm:-m-4 md:-m-6 rounded-lg overflow-hidden">
+        <div className="absolute inset-0 -m-2 sm:-m-4 md:-m-6 rounded-lg overflow-hidden flex items-center justify-center bg-dark-card">
           <Image
             src={event.image}
             alt={event.title}
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
-            className="object-cover"
+            className="object-contain"
           />
         </div>
       )}

@@ -229,11 +229,11 @@ body {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.bento-card:hover {
+/* .bento-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 0 40px -10px rgba(0, 74, 173, 0.4);
   border-color: var(--color-primary);
-}
+} */
 
 .text-gradient {
   background: var(--gradient-primary);
