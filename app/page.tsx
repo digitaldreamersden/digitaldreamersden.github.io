@@ -1,6 +1,7 @@
 import Navigation from './components/Navigation';
 import Header from './components/Header';
 import HeroSection from './components/HeroSection';
+import SocialLinksBar from './components/SocialLinksBar';
 import EventCardCarousel from './components/EventCardCarousel';
 import TeamSection from './components/TeamSection';
 import CommunityPartners from './components/CommunityPartners';
@@ -8,11 +9,9 @@ import CallForEventCard from './components/CallForEventCard';
 import { callForEvents } from './data/callForEvents';
 import eventsData from './data/events';
 import Sponsors from './components/Sponsors';
-import ContactUs from './components/ContactUs';
 import ContributorsSection from './components/ContributorsSection';
+import Footer from './components/Footer';
 import { CalendarCheck, CalendarClock, Megaphone } from 'lucide-react';
-import SocialLinks from './components/ContactUs/SocialLinks';
-import { MessageSquare } from 'lucide-react';
 
 export default function Home() {
   return (
@@ -23,8 +22,9 @@ export default function Home() {
         <Header />
 
         {/* Home */}
-        <section id="home">
+        <section id="home" className="space-y-6">
           <HeroSection />
+          <SocialLinksBar />
         </section>
         {/*Core  Team */}
         <section id="team" className="pt-16">
@@ -89,25 +89,9 @@ export default function Home() {
             ))}
           </div>
         </section>
-        {/* Contact Us Section */}
-        <section id="contact" className="pt-16">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
-            {/* Get in Touch - Left */}
-            <ContactUs />
-
-            {/* Socials - Right */}
-            <div className="space-y-6 h-full flex flex-col">
-              <h2 className="text-2xl font-bold flex items-center gap-2">
-                <MessageSquare className="w-6 h-6 text-dark-secondary" />
-                Socials
-              </h2>
-              <div className="bg-dark-card rounded-3xl border border-dark-border p-6 md:p-8 flex-1 flex-1">
-                <SocialLinks />
-              </div>
-            </div>
-          </div>
-        </section>
       </div>
+
+      <Footer />
     </>
   );
 }

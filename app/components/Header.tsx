@@ -46,55 +46,55 @@ export default function Header() {
           href="https://github.com/d3communityofficial"
           target="_blank"
           rel="noopener noreferrer"
-          className="w-10 h-10 hidden rounded-full bg-dark-card border border-dark-border sm:flex items-center justify-center text-dark-muted hover:text-dark-text hover:border-dark-primary transition-all"
+          className="w-10 h-10 hidden rounded-full bg-dark-card border border-dark-border sm:flex items-center justify-center text-dark-muted hover:text-dark-text hover:border-[#8534F3] transition-all"
           aria-label="GitHub"
         >
-          <Github className="w-5 h-5" />
+          <Github className="w-5 h-5" style={{ color: '#8534F3' }} />
         </a>
         <a
           href="https://d3community.in/x"
           target="_blank"
           rel="noopener noreferrer"
-          className="w-10 h-10 hidden rounded-full bg-dark-card border border-dark-border sm:flex items-center justify-center text-dark-muted hover:text-dark-text hover:border-dark-primary transition-all"
+          className="w-10 h-10 hidden rounded-full bg-dark-card border border-dark-border sm:flex items-center justify-center text-dark-muted hover:text-dark-text hover:border-[#1DA1F2] transition-all"
           aria-label="X (Twitter)"
         >
-          <Twitter className="w-5 h-5" />
+          <Twitter className="w-5 h-5" style={{ color: '#1DA1F2' }} />
         </a>
         <a
           href="https://d3community.in/linkedin"
           target="_blank"
           rel="noopener noreferrer"
-          className="w-10 h-10 hidden rounded-full bg-dark-card border border-dark-border sm:flex items-center justify-center text-dark-muted hover:text-dark-text hover:border-dark-primary transition-all"
+          className="w-10 h-10 hidden rounded-full bg-dark-card border border-dark-border sm:flex items-center justify-center text-dark-muted hover:text-dark-text hover:border-[#0077B5] transition-all"
           aria-label="LinkedIn"
         >
-          <Linkedin className="w-5 h-5" />
+          <Linkedin className="w-5 h-5" style={{ color: '#0077B5' }} />
         </a>
         <a
           href="https://d3community.in/youtube"
           target="_blank"
           rel="noopener noreferrer"
-          className="w-10 h-10 hidden rounded-full bg-dark-card border border-dark-border sm:flex items-center justify-center text-dark-muted hover:text-dark-text hover:border-dark-primary transition-all"
+          className="w-10 h-10 hidden rounded-full bg-dark-card border border-dark-border sm:flex items-center justify-center text-dark-muted hover:text-dark-text hover:border-[#FF0000] transition-all"
           aria-label="YouTube"
         >
-          <Youtube className="w-5 h-5" />
+          <Youtube className="w-5 h-5" style={{ color: '#FF0000' }} />
         </a>
         <a
           href="https://d3community.in/instagram"
           target="_blank"
           rel="noopener noreferrer"
-          className="w-10 h-10 hidden rounded-full bg-dark-card border border-dark-border sm:flex items-center justify-center text-dark-muted hover:text-dark-text hover:border-dark-primary transition-all"
+          className="w-10 h-10 hidden rounded-full bg-dark-card border border-dark-border sm:flex items-center justify-center text-dark-muted hover:text-dark-text hover:border-[#E4405F] transition-all"
           aria-label="Instagram"
         >
-          <Instagram className="w-5 h-5" />
+          <Instagram className="w-5 h-5" style={{ color: '#E4405F' }} />
         </a>
         <a
           href="https://d3community.in/luma"
           target="_blank"
           rel="noopener noreferrer"
-          className="w-10 h-10 hidden rounded-full bg-dark-card border border-dark-border sm:flex items-center justify-center text-dark-muted hover:text-dark-text hover:border-dark-primary transition-all"
+          className="w-10 h-10 hidden rounded-full bg-dark-card border border-dark-border sm:flex items-center justify-center text-dark-muted hover:text-dark-text hover:border-[#FF6B00] transition-all"
           aria-label="Luma Events"
         >
-          <CalendarDays className="w-5 h-5" />
+          <CalendarDays className="w-5 h-5" style={{ color: '#FF6B00' }} />
         </a>
       </div>
     </header>
