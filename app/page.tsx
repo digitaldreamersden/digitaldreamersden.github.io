@@ -26,11 +26,9 @@ export default function Home() {
           <HeroSection />
           <SocialLinksBar />
         </section>
-        {/*Core  Team */}
-        <section id="team" className="pt-16">
-          <TeamSection />
-        </section>
-        <section id="events">
+
+        {/* Events */}
+        <section id="events" className="pt-16">
           <div className="flex items-center gap-3 mb-6">
             <CalendarClock className="w-6 h-6 text-dark-secondary" />
             <h2 className="text-2xl md:text-3xl font-bold font-sans text-[var(--color-text)]">
@@ -44,7 +42,7 @@ export default function Home() {
             emptyMessage="No upcoming events. Stay tuned!"
           />
         </section>
-        <section>
+        <section className="pt-8">
           <div className="flex items-center gap-3 mb-6">
             <CalendarCheck className="w-6 h-6 text-dark-secondary" />
             <h2 className="text-2xl md:text-3xl font-bold font-sans text-[var(--color-text)]">
@@ -58,20 +56,6 @@ export default function Home() {
           />
         </section>
 
-        {/* Community Partners Section */}
-        <section id="partners" className="pt-16">
-          <CommunityPartners />
-        </section>
-
-        {/* Sponsors Section */}
-        <section id="sponsors" className="pt-16">
-          <Sponsors />
-        </section>
-
-        {/* Contributors Section */}
-        <section id="contributors" className="pt-16">
-          <ContributorsSection />
-        </section>
         {/* Call for events */}
         <section id="call-for-events" className="pt-16">
           <div className="flex items-center gap-3 mb-6">
@@ -88,6 +72,26 @@ export default function Home() {
               />
             ))}
           </div>
+        </section>
+
+        {/* Sponsors */}
+        <section id="sponsors" className="pt-16">
+          <Sponsors />
+        </section>
+
+        {/* Community Partners */}
+        <section id="partners" className="pt-16">
+          <CommunityPartners />
+        </section>
+
+        {/* Core Team */}
+        <section id="team" className="pt-16">
+          <TeamSection />
+        </section>
+
+        {/* Contributors */}
+        <section id="contributors" className="pt-16">
+          <ContributorsSection />
         </section>
       </div>
 
