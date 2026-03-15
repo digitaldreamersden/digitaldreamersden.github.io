@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import { ExternalLink } from "lucide-react";
-import Image from "next/image";
-import type { CallForEventCardData } from "../data/callForEvents";
+import { ExternalLink } from 'lucide-react';
+import Image from 'next/image';
+import type { CallForEventCardData } from '../data/callForEvents';
 
 export interface CallForEventCardProps {
   data: CallForEventCardData;
@@ -11,7 +11,11 @@ export interface CallForEventCardProps {
 export default function CallForEventCard({ data }: CallForEventCardProps) {
   const handleClick = () => {
     if (data.formUrl) {
-      window.open(data.formUrl, "_blank", "noopener,noreferrer");
+      if (data.formUrl.startsWith('mailto:')) {
+        window.location.href = data.formUrl;
+      } else {
+        window.open(data.formUrl, '_blank', 'noopener,noreferrer');
+      }
     }
   };
 

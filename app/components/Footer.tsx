@@ -1,6 +1,5 @@
 import { Mail } from 'lucide-react';
-
-const EMAIL = 'd3communityofficial@gmail.com';
+import { COMMUNITY_EMAIL } from '@/app/constants/contact';
 
 export default function Footer() {
   return (
@@ -14,7 +13,7 @@ export default function Footer() {
             Have a question or want to collaborate? Reach out to us.
           </p>
           <a
-            href={`mailto:${EMAIL}`}
+            href={`mailto:${COMMUNITY_EMAIL}`}
             className="inline-flex items-center gap-2 text-dark-primary hover:underline font-medium text-sm"
           >
             <Mail className="w-4 h-4 shrink-0" />
