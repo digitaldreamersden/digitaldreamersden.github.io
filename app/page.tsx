@@ -2,7 +2,8 @@ import Navigation from './components/Navigation';
 import Header from './components/Header';
 import HeroSection from './components/HeroSection';
 import SocialLinksBar from './components/SocialLinksBar';
-import EventCardCarousel from './components/EventCardCarousel';
+import PastEventsAccordion from './components/PastEventsAccordion';
+import UpcomingEvents from './components/UpcomingEvents';
 import TeamSection from './components/TeamSection';
 import CommunityPartners from './components/CommunityPartners';
 import CallForEventCard from './components/CallForEventCard';
@@ -35,10 +36,8 @@ export default function Home() {
               Upcoming Events
             </h2>
           </div>
-          <EventCardCarousel
+          <UpcomingEvents
             events={eventsData.upcomingEvents ?? []}
-            variant="upcoming"
-            ariaLabel="Upcoming Events Carousel"
             emptyMessage="No upcoming events. Stay tuned!"
           />
         </section>
@@ -49,11 +48,7 @@ export default function Home() {
               Past Events
             </h2>
           </div>
-          <EventCardCarousel
-            events={eventsData.pastEvents ?? []}
-            variant="past"
-            ariaLabel="Past Events Carousel"
-          />
+          <PastEventsAccordion events={eventsData.pastEvents ?? []} />
         </section>
 
         {/* Call for events */}
