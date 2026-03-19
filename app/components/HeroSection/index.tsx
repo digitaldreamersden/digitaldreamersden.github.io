@@ -82,7 +82,7 @@ export default function HeroSection() {
           style={{
             backgroundColor: 'rgba(0, 74, 173, 0.1)',
             borderColor: 'rgba(0, 74, 173, 0.3)',
-            color: 'var(--color-bg)',
+            color: '#ffffff',
           }}
         >
           <span className="relative flex h-2 w-2">

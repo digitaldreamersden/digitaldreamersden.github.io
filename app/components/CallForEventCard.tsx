@@ -21,7 +21,7 @@ export default function CallForEventCard({ data }: CallForEventCardProps) {
 
   return (
     <div
-      className="w-full max-w-full aspect-[5/2] rounded-bento p-4 sm:p-5 md:p-6 border border-dark-border bg-dark-card flex flex-col relative overflow-hidden group hover:border-dark-primary transition-colors cursor-pointer"
+      className="w-full max-w-full aspect-5/2 rounded-bento p-4 sm:p-5 md:p-6 border border-dark-border bg-dark-card flex flex-col relative overflow-hidden group hover:border-dark-primary transition-colors cursor-pointer"
       onClick={handleClick}
     >
       {/* External link icon at top right */}
