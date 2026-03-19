@@ -26,6 +26,18 @@ export default function Home() {
         <section id="home" className="space-y-6">
           <HeroSection />
           <SocialLinksBar />
+        {/* Call for events */}
+        <section id="call-for-events">
+          <div className="flex flex-col md:flex-row justify-center gap-6">
+            {callForEvents.map((data) => (
+              <div key={encodeURIComponent(data.title)} className="w-full md:w-1/2 lg:w-1/3">
+                <CallForEventCard
+                  data={data}
+                />
+              </div>
+            ))}
+          </div>
+        </section>
         </section>
 
         {/* Events */}
@@ -49,24 +61,6 @@ export default function Home() {
             </h2>
           </div>
           <PastEventsAccordion events={eventsData.pastEvents ?? []} />
-        </section>
-
-        {/* Call for events */}
-        <section id="call-for-events" className="pt-16">
-          <div className="flex items-center gap-3 mb-6">
-            <Megaphone className="w-6 h-6 text-dark-secondary" />
-            <h2 className="text-2xl md:text-3xl font-bold font-sans text-[var(--color-text)]">
-              Call for events
-            </h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {callForEvents.map((data) => (
-              <CallForEventCard
-                key={encodeURIComponent(data.title)}
-                data={data}
-              />
-            ))}
-          </div>
         </section>
 
         {/* Sponsors */}

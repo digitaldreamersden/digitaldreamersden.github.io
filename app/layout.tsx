@@ -26,7 +26,7 @@ export default function RootLayout({
         <link rel="icon" href="/logo.png" type="image/png" sizes="48x48" />
       </head>
       <body
-        className={`${jakarta.variable} antialiased selection:bg-indigo-500 selection:text-white p-4 md:p-6 lg:p-12 xl:p-12`}
+        className={`${jakarta.variable} antialiased selection:bg-indigo-500 selection:text-white p-2 md:p-6 lg:p-12 xl:p-12`}
       >
         <ThemeProvider>{children}</ThemeProvider>
       </body>

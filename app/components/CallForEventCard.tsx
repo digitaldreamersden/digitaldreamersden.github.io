@@ -40,7 +40,7 @@ export default function CallForEventCard({ data }: CallForEventCardProps) {
             src={data.image}
             alt={data.title}
             fill
-            className="p-4 sm:p-5 md:p-6 object-cover"
+            className="object-cover"
           />
         </div>
       )}
