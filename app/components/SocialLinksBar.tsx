@@ -2,6 +2,7 @@
 
 import { socialPlatforms } from '@/app/data/socials';
 import { useState, useRef } from 'react';
+import { useTheme } from '@/app/context/ThemeContext';
 
 interface TiltState {
   x: number;
@@ -16,6 +17,7 @@ function SocialCard({
   const [tilt, setTilt] = useState<TiltState>({ x: 0, y: 0 });
   const [isHovered, setIsHovered] = useState(false);
   const cardRef = useRef<HTMLAnchorElement>(null);
+  const { theme } = useTheme();
 
   const Icon = platform.icon;
 
@@ -46,10 +48,8 @@ function SocialCard({
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       onMouseEnter={handleMouseEnter}
-      className="group relative flex flex-col items-center justify-between px-4 py-5 rounded-2xl overflow-hidden cursor-pointer"
+      className="group relative flex flex-col items-center justify-between px-4 py-5 rounded-2xl overflow-hidden cursor-pointer w-36 h-36 md:w-48 md:h-48"
       style={{
-        width: '200px',
-        height: '200px',
         transform: `perspective(1000px) rotateX(${tilt.x}deg) rotateY(${tilt.y}deg)`,
         transition: 'transform 0.1s ease-out',
         '--brand-color': platform.color,
@@ -60,9 +60,10 @@ function SocialCard({
         className="absolute inset-0 rounded-2xl bg-dark-card"
         style={{
           boxShadow: isHovered
-            ? `0 0 40px ${platform.color}40, 0 20px 40px rgba(0,0,0,0.3)`
-            : '0 4px 20px rgba(0,0,0,0.2)',
+            ? `0 0 40px ${platform.color}40, 0 20px 40px rgba(0,0,0,0.15)`
+            : `0 8px 24px rgba(0,0,0,0.15), 0 4px 12px rgba(0,0,0,0.1)`,
           transition: 'box-shadow 0.3s ease',
+          border: '1px solid rgba(0,0,0,0.1)',
         }}
       />
 
@@ -91,7 +92,7 @@ function SocialCard({
 
       <div className="relative z-10 flex-1 flex items-center justify-center">
         <div
-          className="relative w-20 h-20 rounded-2xl flex items-center justify-center"
+          className="relative w-16 h-16 md:w-20 md:h-20 rounded-2xl flex items-center justify-center"
           style={{
             backgroundColor: `${platform.color}15`,
             boxShadow: isHovered
@@ -128,7 +129,7 @@ function SocialCard({
           </div>
 
           <Icon
-            className="w-10 h-10 relative z-10"
+            className="w-8 h-8 md:w-10 md:h-10 relative z-10"
             style={{
               color: platform.color,
               filter: isHovered ? `drop-shadow(0 0 8px ${platform.color})` : 'none',
