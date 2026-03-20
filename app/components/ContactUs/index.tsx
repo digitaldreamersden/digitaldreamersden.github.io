@@ -1,15 +1,12 @@
 'use client';
 
 import { MessageSquare } from 'lucide-react';
+import SectionHeader from '../shared/SectionHeader';
 
 export default function ContactUs() {
   return (
     <div className="space-y-6 h-full flex flex-col">
-      {/* Header */}
-      <h2 className="text-2xl font-bold flex items-center gap-2">
-        <MessageSquare className="w-6 h-6 text-dark-secondary" />
-        Get in Touch
-      </h2>
+      <SectionHeader title="Get in Touch" icon={MessageSquare} />
 
       {/* Combined Email Card */}
       <div className="bg-dark-card rounded-3xl border border-dark-border p-8 flex-1 flex items-center">
@@ -40,7 +37,7 @@ export default function ContactUs() {
             >
               d3communityofficial@gmail.com
             </a>{' '}
-            with the subject line "Partnership Inquiry"
+            with the subject line &quot;Partnership Inquiry&quot;
           </p>
         </div>
       </div>
