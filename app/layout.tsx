@@ -11,7 +11,8 @@ const jakarta = Plus_Jakarta_Sans({
 
 export const metadata: Metadata = {
   title: 'Digital Dreamers Den | D3 Community',
-  description: 'The definitive community for AI Engineers & Full-Stack Developers. Less talk, more shipping.',
+  description:
+    'The definitive community for AI Engineers & Full-Stack Developers. Less talk, more shipping.',
 };
 
 export default function RootLayout({
@@ -20,9 +21,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang='en' className='scroll-smooth'>
+    <html lang="en" className="scroll-smooth">
+      <head>
+        <link rel="icon" href="/logo.png" type="image/png" sizes="48x48" />
+      </head>
       <body
-        className={`${jakarta.variable} antialiased selection:bg-indigo-500 selection:text-white p-4 md:p-6 lg:p-12 xl:p-12`}
+        className={`${jakarta.variable} antialiased selection:bg-indigo-500 selection:text-white p-2 md:p-6 lg:p-12 xl:p-12`}
       >
         <ThemeProvider>{children}</ThemeProvider>
       </body>

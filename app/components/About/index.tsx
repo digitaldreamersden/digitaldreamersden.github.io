@@ -1,6 +1,7 @@
 'use client';
 import Image from 'next/image';
 import { Info } from 'lucide-react';
+import SectionHeader from '../shared/SectionHeader';
 import NarrativeBlock from './NarrativeBlock';
 import { aboutData } from '../../data/aboutData'; // Back to TS import
 
@@ -10,11 +11,8 @@ export default function About() {
     // NOW: Just the inner content (The Card + Title)
     <div className="flex flex-col h-full w-full">
       {/* Title */}
-      <div className="flex items-center gap-3 mb-6">
-        <Info className="w-6 h-6 text-dark-secondary" />
-        <h2 className="text-3xl font-bold font-sans text-[var(--color-text)]">
-          About Us
-        </h2>
+      <div className="mb-6">
+        <SectionHeader title="About Us" icon={Info} />
       </div>
 
       {/* Card Content */}

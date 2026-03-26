@@ -14,7 +14,7 @@ export default function HeroIcon({ variant = 'all' }: HeroIconProps) {
     <>
       {/* Mobile: Robot Sitting - Above Join Discord button */}
       {variant === 'mobile' && (
-        <div className="flex md:hidden absolute -top-4 right-0 w-32 h-32 pointer-events-none z-30 items-end justify-end">
+        <div className="flex md:hidden w-32 h-32 mx-auto pointer-events-none z-30 items-end justify-end">
           <Image
             src={getAssetPath('/hero/D3 robot sitting.png')}
             alt="D3 Robot Sitting"
@@ -29,7 +29,7 @@ export default function HeroIcon({ variant = 'all' }: HeroIconProps) {
       {/* Tablet: Robot Flying - Top right corner */}
       {(variant === 'desktop' || variant === 'all') && (
         <>
-          <div className="hidden md:flex lg:hidden absolute top-6 right-6 w-64 h-64 pointer-events-none z-[1] items-start justify-end">
+          <div className="hidden md:flex lg:hidden absolute top-10 right-6 w-64 h-64 pointer-events-none z-10 items-start justify-end">
             <Image
               src={getAssetPath('/hero/D3 robot flying.png')}
               alt="D3 Robot Flying"
@@ -41,7 +41,7 @@ export default function HeroIcon({ variant = 'all' }: HeroIconProps) {
           </div>
 
           {/* Desktop: Robot Pose - Right center */}
-          <div className="hidden lg:flex absolute top-1/2 right-0 xl:right-40 -translate-y-1/2 w-[500px] h-[500px] pointer-events-none z-[1] items-center justify-center">
+          <div className="hidden lg:flex absolute top-1/2 right-0 xl:right-40 -translate-y-1/2 w-[500px] h-[500px] pointer-events-none z-10 items-center justify-center">
             <Image
               src={getAssetPath('/hero/D3 robot pose.png')}
               alt="D3 Robot"

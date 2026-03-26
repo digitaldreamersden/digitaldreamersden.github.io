@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import { ExternalLink } from "lucide-react";
-import Image from "next/image";
-import type { CallForEventCardData } from "../data/callForEvents";
+import { ExternalLink } from 'lucide-react';
+import Image from 'next/image';
+import type { CallForEventCardData } from '../data/callForEvents';
 
 export interface CallForEventCardProps {
   data: CallForEventCardData;
@@ -11,13 +11,17 @@ export interface CallForEventCardProps {
 export default function CallForEventCard({ data }: CallForEventCardProps) {
   const handleClick = () => {
     if (data.formUrl) {
-      window.open(data.formUrl, "_blank", "noopener,noreferrer");
+      if (data.formUrl.startsWith('mailto:')) {
+        window.location.href = data.formUrl;
+      } else {
+        window.open(data.formUrl, '_blank', 'noopener,noreferrer');
+      }
     }
   };
 
   return (
     <div
-      className="w-full max-w-full aspect-[5/2] rounded-bento p-4 sm:p-5 md:p-6 border border-dark-border bg-dark-card flex flex-col relative overflow-hidden group hover:border-dark-primary transition-colors cursor-pointer"
+      className="w-full max-w-full aspect-5/2 rounded-bento p-4 sm:p-5 md:p-6 border border-dark-border bg-dark-card flex flex-col relative overflow-hidden group hover:border-dark-primary transition-colors cursor-pointer"
       onClick={handleClick}
     >
       {/* External link icon at top right */}
@@ -36,7 +40,7 @@ export default function CallForEventCard({ data }: CallForEventCardProps) {
             src={data.image}
             alt={data.title}
             fill
-            className="p-4 sm:p-5 md:p-6 object-cover"
+            className="object-cover"
           />
         </div>
       )}
