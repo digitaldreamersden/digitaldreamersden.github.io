@@ -80,7 +80,11 @@ export default function PastEventsAccordion({ events }: PastEventsAccordionProps
   const handleMouseLeave = () => resume(5_000);
 
   const handleTouchStart = (e: React.TouchEvent) => {
-    touchStartX.current = e.touches[0].clientX;
+    const startX = e.touches[0].clientX;
+    touchStartX.current = startX;
+    // Reset end position at gesture start to avoid stale values
+    // causing accidental extra navigation on simple taps (e.g. arrow buttons).
+    touchEndX.current = startX;
   };
 
   const handleTouchMove = (e: React.TouchEvent) => {
