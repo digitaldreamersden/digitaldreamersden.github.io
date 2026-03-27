@@ -29,6 +29,10 @@ const sponsorsData = [
     image: '/sponsors/yuniq.png',
     url: 'https://yuniq.co/',
   },
+  {
+    image: '/sponsors/concert_idc.jpeg',
+    url: 'http://www.concertidc.com',
+  },
 ];
 
 export default sponsorsData;

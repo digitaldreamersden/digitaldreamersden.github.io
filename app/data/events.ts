@@ -30,7 +30,7 @@ const eventsData: EventsData = {
     {
       id: 'online-event-1',
       date: '2026-02-22',
-      title: 'Digital Dreamers Den (D3) Online Meetup #1',
+      title: 'Online Meetup #1',
       description: 'Career Guidance',
       status: 'completed',
       link: 'https://d3community.in/online-event-1',
@@ -40,7 +40,7 @@ const eventsData: EventsData = {
     {
       id: 'workshop-1',
       date: '2026-01-31',
-      title: 'Digital Dreamers Den (D3) X Lyzr',
+      title: 'Workshop #1',
       description: 'Agentic AI Workshop',
       status: 'completed',
       link: 'https://d3community.in/workshop-1',
@@ -49,7 +49,7 @@ const eventsData: EventsData = {
     },
     {
       id: 'meetup-5',
-      date: '2024-10-20',
+      date: '2025-11-22',
       title: 'Meetup 5',
       description:
         'Advanced topics in full-stack development and AI integration.',
@@ -60,7 +60,7 @@ const eventsData: EventsData = {
     },
     {
       id: 'meetup-4',
-      date: '2024-09-18',
+      date: '2025-09-20',
       title: 'Meetup 4',
       description: 'Building scalable applications with modern frameworks.',
       status: 'completed',
@@ -70,7 +70,7 @@ const eventsData: EventsData = {
     },
     {
       id: 'meetup-3',
-      date: '2024-08-12',
+      date: '2025-07-26',
       title: 'Meetup 3',
       description: 'Deep dive into React and Next.js best practices.',
       status: 'completed',
@@ -80,7 +80,7 @@ const eventsData: EventsData = {
     },
     {
       id: 'meetup-2',
-      date: '2024-07-08',
+      date: '2025-06-21',
       title: 'Meetup 2',
       description: 'Introduction to AI tools for developers.',
       status: 'completed',
@@ -90,7 +90,7 @@ const eventsData: EventsData = {
     },
     {
       id: 'meetup-1',
-      date: '2024-06-05',
+      date: '2025-05-03',
       title: 'Meetup 1',
       description: 'Kickoff event - Building the D3 Community.',
       status: 'completed',

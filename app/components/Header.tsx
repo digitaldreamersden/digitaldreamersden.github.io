@@ -23,7 +23,7 @@ export default function Header() {
           <AppLogo />
         </div>
         <div className="min-w-0">
-          <h1 className="font-bold text-3xl md:text-3xl lg:text-4xl leading-none tracking-tight whitespace-nowrap">
+          <h1 className="font-bold text-xl md:text-3xl lg:text-4xl leading-none tracking-tight whitespace-nowrap">
             Digital Dreamers Den
           </h1>
         </div>
