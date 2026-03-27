@@ -10,9 +10,9 @@ const jakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: 'Digital Dreamers Den | D3 Community',
+  title: 'Digital Dreamers Den (D3)',
   description:
-    'The definitive community for AI Engineers & Full-Stack Developers. Less talk, more shipping.',
+    'A vibrant tech community bringing AI Full-Stack Developers together to build the future 🚀',
 };
 
 export default function RootLayout({
