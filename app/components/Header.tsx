@@ -43,7 +43,7 @@ export default function Header() {
         </button>
 
         <a
-          href="https://github.com/d3communityofficial"
+          href="https://digitaldreamersden.in/github"
           target="_blank"
           rel="noopener noreferrer"
           className="w-10 h-10 hidden rounded-full bg-dark-card border border-dark-border sm:flex items-center justify-center text-dark-muted hover:text-dark-text hover:border-[#8534F3] transition-all"
@@ -52,7 +52,7 @@ export default function Header() {
           <Github className="w-5 h-5" style={{ color: '#8534F3' }} />
         </a>
         <a
-          href="https://d3community.in/x"
+          href="https://digitaldreamersden.in/x"
           target="_blank"
           rel="noopener noreferrer"
           className="w-10 h-10 hidden rounded-full bg-dark-card border border-dark-border sm:flex items-center justify-center text-dark-muted hover:text-dark-text hover:border-[#1DA1F2] transition-all"
@@ -61,7 +61,7 @@ export default function Header() {
           <Twitter className="w-5 h-5" style={{ color: '#1DA1F2' }} />
         </a>
         <a
-          href="https://d3community.in/linkedin"
+          href="https://digitaldreamersden.in/linkedin"
           target="_blank"
           rel="noopener noreferrer"
           className="w-10 h-10 hidden rounded-full bg-dark-card border border-dark-border sm:flex items-center justify-center text-dark-muted hover:text-dark-text hover:border-[#0077B5] transition-all"
@@ -70,7 +70,7 @@ export default function Header() {
           <Linkedin className="w-5 h-5" style={{ color: '#0077B5' }} />
         </a>
         <a
-          href="https://d3community.in/youtube"
+          href="https://digitaldreamersden.in/youtube"
           target="_blank"
           rel="noopener noreferrer"
           className="w-10 h-10 hidden rounded-full bg-dark-card border border-dark-border sm:flex items-center justify-center text-dark-muted hover:text-dark-text hover:border-[#FF0000] transition-all"
@@ -79,7 +79,7 @@ export default function Header() {
           <Youtube className="w-5 h-5" style={{ color: '#FF0000' }} />
         </a>
         <a
-          href="https://d3community.in/instagram"
+          href="https://digitaldreamersden.in/instagram"
           target="_blank"
           rel="noopener noreferrer"
           className="w-10 h-10 hidden rounded-full bg-dark-card border border-dark-border sm:flex items-center justify-center text-dark-muted hover:text-dark-text hover:border-[#E4405F] transition-all"
@@ -88,7 +88,7 @@ export default function Header() {
           <Instagram className="w-5 h-5" style={{ color: '#E4405F' }} />
         </a>
         <a
-          href="https://d3community.in/luma"
+          href="https://digitaldreamersden.in/luma"
           target="_blank"
           rel="noopener noreferrer"
           className="w-10 h-10 hidden rounded-full bg-dark-card border border-dark-border sm:flex items-center justify-center text-dark-muted hover:text-dark-text hover:border-[#FF6B00] transition-all"

@@ -15,7 +15,7 @@ export default function UpcomingEvents({ events }: UpcomingEventsProps) {
     return (
       <div className="relative w-[459px] max-w-full aspect-square rounded-2xl overflow-hidden border border-dark-border">
         <a
-          href={'https://d3community.in/luma'}
+          href={'https://digitaldreamersden.in/luma'}
           target="_blank"
           rel="noopener noreferrer"
           className="block w-[459px] max-w-full rounded-2xl overflow-hidden cursor-pointer"

@@ -104,8 +104,7 @@ export default function HeroSection() {
         </h2>
 
         <p className="text-base md:text-lg text-white/85 mb-4 md:mb-8 max-w-md hero-paragraph leading-relaxed">
-          A vibrant tech community that brings together AI Full-Stack Developers
-          to build the future.
+          A vibrant tech community bringing AI and Full-Stack Engineers together to build the future.
         </p>
 
         <p className="text-base md:text-lg text-white/85 mb-4 md:mb-8 max-w-md hero-paragraph leading-relaxed">
