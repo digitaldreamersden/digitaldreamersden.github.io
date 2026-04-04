@@ -28,6 +28,16 @@ export interface EventsData {
 const eventsData: EventsData = {
   pastEvents: [
     {
+      id: 'meetup-6',
+      date: '2026-03-28',
+      title: 'Digital Dreamers Den (D3) Meetup #6',
+      description: 'AI Full Stack development',
+      status: 'upcoming',
+      link: 'https://d3community.in/meetup-6',
+      venue: 'Yuniq, Chennai',
+      image: '/events/event-6.jpeg',
+    },
+    {
       id: 'online-event-1',
       date: '2026-02-22',
       title: 'Online Meetup #1',
@@ -100,16 +110,7 @@ const eventsData: EventsData = {
     },
   ],
   upcomingEvents: [
-    {
-      id: 'meetup-6',
-      date: '2026-03-28',
-      title: 'Digital Dreamers Den (D3) Meetup #6',
-      description: 'AI Full Stack development',
-      status: 'upcoming',
-      rsvpUrl: 'https://luma.com/qsfq2226?tk=cnGDF5',
-      venue: 'Yuniq, Chennai',
-      image: '/events/event-6.jpeg',
-    },
+
   ],
 };
 
