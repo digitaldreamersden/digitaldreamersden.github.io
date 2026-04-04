@@ -43,3 +43,6 @@ next-env.d.ts
 # templates
 prototype-dark.html
 prototype-light.html
+
+# 3D model
+public/3d-model/D3-robot-3d-model.glb
