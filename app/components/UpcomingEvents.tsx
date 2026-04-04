@@ -10,25 +10,26 @@ interface UpcomingEventsProps {
   emptyMessage?: string;
 }
 
-export default function UpcomingEvents({
-  events,
-  emptyMessage = 'No upcoming events. Stay tuned!',
-}: UpcomingEventsProps) {
+export default function UpcomingEvents({ events }: UpcomingEventsProps) {
   if (!events.length) {
     return (
       <div className="relative w-[459px] max-w-full aspect-square rounded-2xl overflow-hidden border border-dark-border">
-        <Image
-          src={PLACEHOLDER_IMAGE}
-          alt="No events"
-          fill
-          sizes="459px"
-          className="object-cover"
-        />
-        <div className="absolute inset-0 flex items-center justify-center bg-black/40">
-          <p className="text-white text-sm font-semibold text-center px-4">
-            {emptyMessage}
-          </p>
-        </div>
+        <a
+          href={'https://d3community.in/luma'}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block w-[459px] max-w-full rounded-2xl overflow-hidden cursor-pointer"
+          aria-label={'Subscribe for upcoming events'}
+        >
+          <Image
+            src={PLACEHOLDER_IMAGE}
+            alt="No events"
+            fill
+            sizes="459px"
+            className="object-cover"
+            title="Subscribe for upcoming events"
+          />
+        </a>
       </div>
     );
   }

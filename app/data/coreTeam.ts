@@ -10,7 +10,7 @@ const coreTeam: CoreTeamMember[] = [
   {
     id: 'd3-001',
     name: 'Aravind Kumar J',
-    role: 'Founder & Organizer',
+    role: 'Founder & Community Lead',
     avatar: '/coreTeam/aravind.jpg',
     linkedin: 'https://www.linkedin.com/in/iamaravindkumar/',
   },
