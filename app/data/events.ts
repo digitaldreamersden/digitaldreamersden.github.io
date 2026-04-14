@@ -105,12 +105,21 @@ const eventsData: EventsData = {
       description: 'Kickoff event - Building the D3 Community.',
       status: 'completed',
       link: 'https://digitaldreamersden.in/meetup-1',
-      venue: 'Community Center, Bangalore',
+      venue: 'M2P Fintech, Chennai',
       image: '/events/event-1.jpeg',
     },
   ],
   upcomingEvents: [
-
+    {
+      id: 'meetup-7',
+      date: '2026-05-09',
+      title: 'Meetup 7',
+      description: 'AI in the real world - Use cases and best practices.',
+      status: 'upcoming',
+      rsvpUrl: 'https://digitaldreamersden.in/meetup-7',
+       venue: 'Yuniq, Chennai',
+      image: '/events/event-7.jpeg',
+    },
   ],
 };
 
