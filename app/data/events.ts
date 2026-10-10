@@ -28,11 +28,21 @@ export interface EventsData {
 const eventsData: EventsData = {
   pastEvents: [
     {
+      id: 'meetup-9',
+      date: '2026-09-05',
+      title: 'Meetup 9',
+      description: 'AI and Full-Stack Development Meetup - Exploring the Future of Technology.',
+      status: 'completed',
+      link: 'https://digitaldreamersden.in/meetup-9',
+      venue: 'Freshworks, Chennai',
+      image: '/events/event-9.jpg',
+    },
+    {
       id: 'meetup-8',
       date: '2026-07-04',
       title: 'Meetup 8',
       description: 'AI and Full-Stack Development - The Journey Behind Every Product.',
-      status: 'upcoming',
+      status: 'completed',
       link: 'https://digitaldreamersden.in/meetup-8',
       venue: 'Freshworks, Chennai',
       image: '/events/event-8.jpg',
@@ -52,7 +62,7 @@ const eventsData: EventsData = {
       date: '2026-03-28',
       title: 'Digital Dreamers Den (D3) Meetup #6',
       description: 'AI Full Stack development',
-      status: 'upcoming',
+      status: 'completed',
       link: 'https://digitaldreamersden.in/meetup-6',
       venue: 'Yuniq, Chennai',
       image: '/events/event-6.jpeg',
@@ -130,16 +140,16 @@ const eventsData: EventsData = {
     },
   ],
   upcomingEvents: [
-      {
-      id: 'meetup-9',
-      date: '2026-09-05',
-      title: 'Meetup 9',
-      description: 'AI and Full-Stack Development Meetup - Exploring the Future of Technology.',
-      status: 'upcoming',
-      rsvpUrl: 'https://digitaldreamersden.in/meetup-9',
-      venue: 'Freshworks, Chennai',
-      image: '/events/event-9.jpg',
-    },
+    //   {
+    //   id: 'meetup-9',
+    //   date: '2026-09-05',
+    //   title: 'Meetup 9',
+    //   description: 'AI and Full-Stack Development Meetup - Exploring the Future of Technology.',
+    //   status: 'upcoming',
+    //   rsvpUrl: 'https://digitaldreamersden.in/meetup-9',
+    //   venue: 'Freshworks, Chennai',
+    //   image: '/events/event-9.jpg',
+    // },
   ],
 };
 
