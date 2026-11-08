@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   },
 };
 
-const IFRAME_SRC = 'https://digitaldreamersden.github.io/d3-leader-board/';
+const IFRAME_SRC = 'https://digitaldreamersden.github.io/d3-leader-board/?v=2';
 
 export default function FindMyTeamPage() {
   return (
