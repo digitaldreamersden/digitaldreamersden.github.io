@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import Navigation from './components/Navigation';
 import Header from './components/Header';
 import HeroSection from './components/HeroSection';
@@ -11,9 +12,8 @@ import CallForEventCard from './components/CallForEventCard';
 import { callForEvents } from './data/callForEvents';
 import eventsData from './data/events';
 import Sponsors from './components/Sponsors';
-import ContributorsSection from './components/ContributorsSection';
 import Footer from './components/Footer';
-import { CalendarCheck, CalendarClock } from 'lucide-react';
+import { ArrowRight, CalendarCheck, CalendarClock } from 'lucide-react';
 import SectionHeader from './components/shared/SectionHeader';
 
 export default function Home() {
@@ -69,13 +69,17 @@ export default function Home() {
         </section>
 
         {/* Core Team */}
-        <section id="team" className="pt-16">
+        <section id="team" className="pt-16 space-y-6">
           <TeamSection />
-        </section>
-
-        {/* Contributors */}
-        <section id="contributors" className="pt-16">
-          <ContributorsSection />
+          <div className="flex justify-center pt-2">
+            <Link
+              href="/contributors"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-bold transition-all hover:shadow-lg hover:scale-105 border border-dark-border bg-dark-card text-dark-text hover:border-dark-primary text-sm sm:text-base group"
+            >
+              <span>Meet our Contributors</span>
+              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+            </Link>
+          </div>
         </section>
       </div>
 

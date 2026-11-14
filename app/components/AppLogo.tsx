@@ -9,17 +9,17 @@ export default function AppLogo() {
   return (
     <div className='app-logo-slot'>
       <Image
-        src='/logo.png'
-        alt='D3 community logo'
-        width={48}
-        height={48}
+        src='/full_logo_dark.png'
+        alt='Digital Dreamers Den logo'
+        width={120}
+        height={60}
         className={`${logoClass} app-logo-img--light`}
       />
       <Image
-        src='/logo_dark.png'
-        alt='D3 community logo'
-        width={48}
-        height={48}
+        src='/full_logo_light.png'
+        alt='Digital Dreamers Den logo'
+        width={120}
+        height={60}
         className={`${logoClass} app-logo-img--dark`}
       />
     </div>

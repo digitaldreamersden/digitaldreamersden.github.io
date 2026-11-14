@@ -95,7 +95,7 @@ export default function HeroSection() {
               style={{ backgroundColor: 'var(--color-primary)' }}
             ></span>
           </span>
-          BUILDING THE FUTURE
+          Building The Future
         </div>
 
         <h2 className="text-4xl md:text-6xl font-extrabold leading-tight mb-3 md:mb-6 tracking-tight text-white">

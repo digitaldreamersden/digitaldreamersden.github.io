@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { Cpu } from 'lucide-react';
+import { Users } from 'lucide-react';
 import CardSkeleton from './shared/CardSkeleton';
 import SectionCardGrid from './shared/SectionCardGrid';
 import coreTeam, { CoreTeamMember } from '@/app/data/coreTeam';
@@ -9,7 +9,7 @@ import { getAssetPath } from '@/app/utils/paths';
 
 export default function TeamSection() {
   return (
-    <SectionCardGrid title="Core Team" icon={Cpu}>
+    <SectionCardGrid title="Team" icon={Users}>
       {coreTeam.map((member: CoreTeamMember) => (
         <CardSkeleton key={member.id} url={member.linkedin}>
           <div className="relative w-full h-full group">

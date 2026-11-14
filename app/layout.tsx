@@ -61,9 +61,15 @@ const themeInitializerScript = `
       : (prefersDark ? 'dark' : 'light');
     document.documentElement.setAttribute('data-theme', theme);
     document.documentElement.style.colorScheme = theme;
+    if (theme === 'dark') {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
   } catch (_error) {
     document.documentElement.setAttribute('data-theme', 'light');
     document.documentElement.style.colorScheme = 'light';
+    document.documentElement.classList.remove('dark');
   }
 })();
 `;

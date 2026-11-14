@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import {
   Github,
   Twitter,
@@ -18,16 +19,19 @@ export default function Header() {
 
   return (
     <header className="flex justify-between items-center gap-4 sm:gap-0 px-2">
-      <div className="flex items-center gap-4 min-w-0">
-        <div className="w-8 h-8 sm:w-9 sm:h-9 lg:w-12 lg:h-12 shrink-0">
+      <Link
+        href="/"
+        className="flex items-center gap-4 min-w-0 hover:opacity-90 transition-opacity"
+      >
+        <div className="w-[120px] h-[60px] sm:w-[160px] sm:h-[80px] shrink-0">
           <AppLogo />
         </div>
-        <div className="min-w-0">
+        {/* <div className="min-w-0">
           <h1 className="font-bold text-xl md:text-3xl lg:text-4xl leading-none tracking-tight whitespace-nowrap">
             Digital Dreamers Den
           </h1>
-        </div>
-      </div>
+        </div> */}
+      </Link>
       <div className="flex gap-3 items-center">
         {/* Theme Toggle Button */}
         <button
