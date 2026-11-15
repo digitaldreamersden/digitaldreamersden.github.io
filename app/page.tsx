@@ -44,17 +44,19 @@ export default function Home() {
         </section>
 
         {/* Events */}
-        <section id="events" className="pt-16 space-y-6">
-          <SectionHeader title="Upcoming Events" icon={CalendarClock} />
-          <UpcomingEvents
-            events={eventsData.upcomingEvents ?? []}
-            emptyMessage="No upcoming events. Stay tuned!"
-          />
-        </section>
-        <section className="pt-8 space-y-6">
-          <SectionHeader title="Past Events" icon={CalendarCheck} />
-          <PastEventsAccordion events={eventsData.pastEvents ?? []} />
-        </section>
+        <div id="events" className="pt-16 flex flex-col lg:flex-row lg:items-start gap-8">
+          <section className="space-y-6 lg:shrink-0">
+            <SectionHeader title="Upcoming Events" icon={CalendarClock} />
+            <UpcomingEvents
+              events={eventsData.upcomingEvents ?? []}
+              emptyMessage="No upcoming events. Stay tuned!"
+            />
+          </section>
+          <section className="space-y-6 lg:flex-1 lg:min-w-0 overflow-hidden">
+            <SectionHeader title="Past Events" icon={CalendarCheck} />
+            <PastEventsAccordion events={eventsData.pastEvents ?? []} />
+          </section>
+        </div>
 
         <AttendeeTestimonials />
 
