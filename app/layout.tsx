@@ -10,9 +10,9 @@ const GA_MEASUREMENT_ID = 'G-QCVVJ10Q0T';
 const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL ?? 'https://digitaldreamersden.in';
 
-const siteTitle = 'Digital Dreamers Den (D3)';
+const siteTitle = 'Digital Dreamers Den (D3) | The community for Full-Stack AI Engineers.';
 const siteDescription =
-  'A vibrant tech community bringing AI and Full-Stack Engineers together to build the future 🚀';
+  'A vibrant tech community bringing Full-Stack AI Engineers together to build the future 🚀';
 
 const jakarta = Plus_Jakarta_Sans({
   variable: '--font-jakarta',
