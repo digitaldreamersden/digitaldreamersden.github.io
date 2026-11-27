@@ -5,16 +5,17 @@ import { UserPlus } from 'lucide-react';
 import CardSkeleton from './shared/CardSkeleton';
 import SectionCardGrid from './shared/SectionCardGrid';
 import contributors, { Contributor } from '@/app/data/contributorsData';
+import { getAssetPath } from '@/app/utils/paths';
 
 export default function ContributorsSection() {
   return (
-    <SectionCardGrid title="Contributors" icon={UserPlus}>
+    <SectionCardGrid title="Contributors" icon={UserPlus} skipHeader={true}>
       {contributors.map((contributor: Contributor) => (
         <CardSkeleton key={contributor.id} url={contributor.linkedin}>
           <div className="relative w-full h-full group">
             <div className="absolute -top-6 -left-6 -right-6 -bottom-6">
               <Image
-                src={contributor.avatar}
+                src={getAssetPath(contributor.avatar)}
                 alt={contributor.name}
                 fill
                 className="object-cover transition-transform duration-500 group-hover:scale-105"
@@ -42,12 +43,12 @@ export default function ContributorsSection() {
                   {contributor.name}
                 </h3>
 
-                <p
+                {/* <p
                   className="text-[10px] sm:text-[11px] md:text-xs mt-0.5 text-center"
                   style={{ color: 'var(--color-muted)' }}
                 >
                   {contributor.role}
-                </p>
+                </p> */}
               </div>
             </div>
           </div>

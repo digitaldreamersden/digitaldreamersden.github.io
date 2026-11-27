@@ -16,6 +16,7 @@ export interface SectionCardGridProps {
   /** Vertical gap between heading and card row */
   spacing?: SectionCardGridSpacing;
   gridClassName?: string;
+  skipHeader?: boolean;
 }
 
 export default function SectionCardGrid({
@@ -24,10 +25,11 @@ export default function SectionCardGrid({
   children,
   spacing = 'comfortable',
   gridClassName = 'flex flex-wrap justify-center md:justify-start gap-6 md:gap-7',
+  skipHeader = false,
 }: SectionCardGridProps) {
   return (
     <div className={spacingClass[spacing]}>
-      <SectionHeader title={title} icon={icon} />
+      {!skipHeader && <SectionHeader title={title} icon={icon} />}
       <div className={gridClassName}>{children}</div>
     </div>
   );

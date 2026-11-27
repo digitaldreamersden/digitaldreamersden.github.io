@@ -95,21 +95,20 @@ export default function HeroSection() {
               style={{ backgroundColor: 'var(--color-primary)' }}
             ></span>
           </span>
-          BUILDING THE FUTURE
+          Building The Future
         </div>
 
         <h2 className="text-4xl md:text-6xl font-extrabold leading-tight mb-3 md:mb-6 tracking-tight text-white">
           Dream. <br />
-          <span>Build.Grow.</span>
+          <span>Build.Ship.</span>
         </h2>
 
-        <p className="text-base md:text-lg text-white/85 mb-4 md:mb-8 max-w-md hero-paragraph leading-relaxed">
-          A vibrant tech community bringing AI and Full-Stack Engineers together to build the future.
+        <p className="text-xl md:text-3xl font-bold text-white mb-4 md:mb-6 max-w-lg leading-snug tracking-tight">
+          The community for <span className="whitespace-nowrap">Full-Stack AI Engineers.</span>
         </p>
 
         <p className="text-base md:text-lg text-white/85 mb-4 md:mb-8 max-w-md hero-paragraph leading-relaxed">
-          We host events, workshops, and networking opportunities that connect
-          talented engineers with cutting-edge technology and industry leaders.
+          We run practical workshops and meetups so engineers can learn, build, and ship real AI-powered applications.
         </p>
 
         <div className="flex flex-col items-center md:flex-row md:items-center md:justify-start justify-center gap-1 md:gap-4 relative md:static h-[180px] md:h-auto">
