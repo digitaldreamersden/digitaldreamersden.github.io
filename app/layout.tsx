@@ -10,7 +10,7 @@ const GA_MEASUREMENT_ID = 'G-QCVVJ10Q0T';
 const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL ?? 'https://digitaldreamersden.in';
 
-const siteTitle = 'Digital Dreamers Den (D3) | The community for Full-Stack AI Engineers.';
+const siteTitle = 'Digital Dreamers Den (D3) | A Full-Stack AI Engineer Community';
 const siteDescription =
   'A vibrant tech community bringing Full-Stack AI Engineers together to build the future 🚀';
 
